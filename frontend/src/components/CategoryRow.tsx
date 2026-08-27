@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import type { Strings } from '../i18n'
 import type { Category, Story } from '../types'
 import { StoryCard } from './StoryCard'
 
@@ -7,11 +8,13 @@ export function CategoryRow({
   stories,
   onDiscover,
   onSelect,
+  t,
 }: {
   category: Category
   stories: Story[]
   onDiscover: (category: Category) => Promise<void>
   onSelect: (story: Story) => void
+  t: Strings
 }) {
   const scroller = useRef<HTMLDivElement>(null)
   const [discovering, setDiscovering] = useState(false)
@@ -41,7 +44,7 @@ export function CategoryRow({
           disabled={discovering}
           className="cursor-pointer text-xs font-medium text-white/40 transition hover:text-ember disabled:cursor-wait disabled:text-amber-400"
         >
-          {discovering ? '⟳ Actualizando…' : '⟳ Actualizar'}
+          {discovering ? t.refreshing : t.refresh}
         </button>
       </div>
 
@@ -54,7 +57,7 @@ export function CategoryRow({
         )}
         <div ref={scroller} className="row-scroll flex gap-4 overflow-x-auto px-8 pb-3 md:px-14">
           {stories.map((story) => (
-            <StoryCard key={story.id} story={story} onClick={() => onSelect(story)} />
+            <StoryCard key={story.id} story={story} onClick={() => onSelect(story)} t={t} />
           ))}
           {stories.length === 0 &&
             Array.from({ length: 5 }).map((_, i) => (
@@ -65,7 +68,7 @@ export function CategoryRow({
               >
                 {i === 0 && (
                   <span className="absolute inset-x-0 bottom-4 px-4 text-center font-display text-xs font-600 text-white/35">
-                    Preparando la edición de hoy…
+                    {t.preparing}
                   </span>
                 )}
               </div>

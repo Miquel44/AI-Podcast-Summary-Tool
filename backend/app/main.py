@@ -10,9 +10,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from .config import settings
+from .config import BASE_DIR, settings
 from .database import Base, SessionLocal, engine
-from .routers import categories, settings as settings_router, stories
+from .routers import categories, interests, metrics, settings as settings_router, stories
 from .seed import seed_categories
 
 logging.basicConfig(level=logging.INFO)
@@ -29,6 +29,8 @@ app.add_middleware(
 app.include_router(categories.router)
 app.include_router(stories.router)
 app.include_router(settings_router.router)
+app.include_router(interests.router)
+app.include_router(metrics.router)
 app.mount("/storage", StaticFiles(directory=settings.storage_dir), name="storage")
 
 
@@ -45,3 +47,11 @@ def on_startup() -> None:
 @app.get("/api/health")
 def health():
     return {"status": "ok"}
+
+
+# Production mode: serve the built frontend from the same server, so a
+# reviewer runs ONE process and opens ONE url (see run.bat / run.sh).
+# Mounted LAST so every /api and /storage route wins over the catch-all.
+_frontend_dist = BASE_DIR / "frontend" / "dist"
+if _frontend_dist.exists():
+    app.mount("/", StaticFiles(directory=_frontend_dist, html=True), name="frontend")

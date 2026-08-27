@@ -12,3 +12,4 @@ elevenlabs==1.50.3
 pydub==0.25.1
 truststore==0.10.0
 google-genai==1.2.0
+python-multipart==0.0.20

@@ -32,6 +32,8 @@ export interface Story {
   icon: string
   cover_from: string
   cover_to: string
+  cover_image: string | null
+  cover_credit: string | null
   source_articles: SourceArticle[]
   status: StoryStatus
   created_at: string
@@ -55,4 +57,5 @@ export interface StoryDetail extends Story {
 export interface AppSettings {
   default_voice_id: string | null
   default_voice_name: string | null
+  language: string
 }

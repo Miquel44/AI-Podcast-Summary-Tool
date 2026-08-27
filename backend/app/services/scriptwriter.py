@@ -85,7 +85,11 @@ def write_script(
         f"LONGITUD MÁXIMA (estricta): {settings.episode_target_words} palabras en total. "
         f"No la superes: mejor profundizar en menos puntos que cubrirlo todo."
     )
-    data = llm.chat_json(system, user, model=model) if model else llm.script_json(system, user)
+    data = (
+        llm.chat_json(system, user, model=model, kind="script", meta=category.slug)
+        if model
+        else llm.script_json(system, user, meta=category.slug)
+    )
 
     lines = [
         {"host": int(l.get("host", 0)), "text": str(l.get("text", "")).strip()}

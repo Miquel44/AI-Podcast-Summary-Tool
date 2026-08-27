@@ -29,7 +29,10 @@ def update_category(category_id: int, payload: CategoryUpdate, db: Session = Dep
 def list_stories(category_id: int, db: Session = Depends(get_db)):
     return (
         db.query(Story)
-        .filter(Story.category_id == category_id)
+        .filter(
+            Story.category_id == category_id,
+            Story.language == discovery.content_language(db),
+        )
         .order_by(Story.id.desc())
         .limit(30)
         .all()

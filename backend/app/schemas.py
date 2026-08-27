@@ -35,6 +35,8 @@ class StoryOut(BaseModel):
     icon: str
     cover_from: str
     cover_to: str
+    cover_image: str | None
+    cover_credit: str | None
     source_articles: list[dict]
     status: StoryStatus
     created_at: datetime

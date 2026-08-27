@@ -7,6 +7,7 @@ A dead feed is skipped, never fatal.
 
 import concurrent.futures
 import logging
+import re
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from urllib.parse import quote
@@ -64,6 +65,22 @@ class Article:
     source: str
     summary: str
     published: datetime | None
+    image: str | None = None
+
+
+def _entry_image(entry) -> str | None:
+    """Best image URL a feed entry carries (media RSS, thumbnail, enclosure)."""
+    for media in getattr(entry, "media_content", []) or []:
+        url = media.get("url", "")
+        if url and media.get("medium", "image") == "image":
+            return url
+    for thumb in getattr(entry, "media_thumbnail", []) or []:
+        if thumb.get("url"):
+            return thumb["url"]
+    for enc in getattr(entry, "enclosures", []) or []:
+        if enc.get("href") and "image" in enc.get("type", ""):
+            return enc["href"]
+    return None
 
 
 def _fetch_one(source: dict, timeout: float = 10.0) -> list[Article]:
@@ -91,6 +108,7 @@ def _fetch_one(source: dict, timeout: float = 10.0) -> list[Article]:
                     source=source["name"],
                     summary=getattr(entry, "summary", "")[:500],
                     published=published,
+                    image=_entry_image(entry),
                 )
             )
         return articles
@@ -99,8 +117,22 @@ def _fetch_one(source: dict, timeout: float = 10.0) -> list[Article]:
         return []
 
 
-def fetch_articles(category_slug: str, window_hours: int = 36, cap: int = 60) -> list[Article]:
+# Locale for Google News per content language.
+GNEWS_LOCALE = {"es": ("es", "ES"), "en": ("en", "US"), "ca": ("ca", "ES")}
+
+
+def fetch_articles(
+    category_slug: str,
+    query: str | None = None,
+    lang: str = "es",
+    window_hours: int = 36,
+    cap: int = 60,
+) -> list[Article]:
     sources = FEEDS.get(category_slug, [])
+    if not sources and query:
+        # Dynamic category (user-created interest): Google News is the backbone.
+        hl, gl = GNEWS_LOCALE.get(lang, GNEWS_LOCALE["es"])
+        sources = [{"name": f"Google News · {query}", "url": gnews(query, hl, gl)}]
     if not sources:
         return []
     with concurrent.futures.ThreadPoolExecutor(max_workers=len(sources)) as pool:
@@ -120,3 +152,29 @@ def fetch_articles(category_slug: str, window_hours: int = 36, cap: int = 60) ->
 
     articles.sort(key=lambda a: a.published or datetime.min.replace(tzinfo=timezone.utc), reverse=True)
     return articles[:cap]
+
+
+_OG_IMAGE_RE = re.compile(
+    r'<meta[^>]+(?:property|name)=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']'
+    r'|<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property|name)=["\']og:image["\']',
+    re.IGNORECASE,
+)
+
+
+def fetch_og_image(url: str, timeout: float = 4.0) -> str | None:
+    """og:image of an article page. Google News redirect pages are skipped."""
+    if "news.google.com" in url:
+        return None
+    try:
+        resp = httpx.get(
+            url, timeout=timeout, follow_redirects=True,
+            headers={"User-Agent": "Mozilla/5.0 (personal-podcast-generator)"},
+        )
+        resp.raise_for_status()
+        match = _OG_IMAGE_RE.search(resp.text[:60_000])
+        if match:
+            image = (match.group(1) or match.group(2) or "").strip()
+            return image[:600] if image.startswith("http") else None
+    except Exception as exc:
+        log.debug("og:image failed for %s: %s", url, exc)
+    return None

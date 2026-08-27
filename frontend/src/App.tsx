@@ -1,15 +1,32 @@
-import { useCallback, useEffect, useState } from 'react'
+import { Suspense, lazy, useCallback, useEffect, useMemo, useState } from 'react'
 import { api } from './api'
 import { CategoryRow } from './components/CategoryRow'
 import { Hero } from './components/Hero'
+import { StoryCard } from './components/StoryCard'
+import { InterestsModal } from './components/InterestsModal'
 import { StoryModal } from './components/StoryModal'
+import { LANGS, STRINGS, type Lang } from './i18n'
 import type { Category, Story } from './types'
+
+// The dashboard pulls the whole charting library — load it only when opened.
+const Dashboard = lazy(() =>
+  import('./components/Dashboard').then((m) => ({ default: m.Dashboard })),
+)
 
 export default function App() {
   const [categories, setCategories] = useState<Category[]>([])
   const [storiesByCat, setStoriesByCat] = useState<Record<number, Story[]>>({})
   const [selected, setSelected] = useState<Story | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [lang, setLang] = useState<Lang>('es')
+  const [view, setView] = useState<'home' | 'dashboard'>(
+    window.location.hash.startsWith('#dashboard') ? 'dashboard' : 'home',
+  )
+  const [showInterests, setShowInterests] = useState(false)
+  const [query, setQuery] = useState('')
+  const [heroIdx, setHeroIdx] = useState(0)
+
+  const t = STRINGS[lang]
 
   const loadStories = useCallback(async (cats: Category[]) => {
     const entries = await Promise.all(
@@ -18,27 +35,46 @@ export default function App() {
     setStoriesByCat(Object.fromEntries(entries))
   }, [])
 
-  const refreshAll = useCallback(() => {
-    if (categories.length) loadStories(categories)
-  }, [categories, loadStories])
-
-  useEffect(() => {
-    api
-      .categories()
-      .then((cats) => {
-        setCategories(cats)
-        return loadStories(cats)
-      })
-      .catch((e) => setError(String(e)))
+  const loadAll = useCallback(async () => {
+    const cats = (await api.categories()).filter((c) => c.enabled)
+    setCategories(cats)
+    await loadStories(cats)
   }, [loadStories])
 
+  useEffect(() => {
+    api.settings().then((s) => {
+      if (LANGS.includes(s.language as Lang)) setLang(s.language as Lang)
+    })
+    loadAll().catch((e) => setError(String(e)))
+  }, [loadAll])
+
   // The backend prepares the daily edition on its own; poll quietly so rows
-  // fill in and card statuses update without any user action.
+  // fill in and card statuses update without any user action. Paused while
+  // the tab is hidden to avoid useless requests.
   useEffect(() => {
     if (!categories.length) return
-    const t = setInterval(() => loadStories(categories), 6000)
-    return () => clearInterval(t)
+    const timer = setInterval(() => {
+      if (!document.hidden) loadStories(categories)
+    }, 6000)
+    return () => clearInterval(timer)
   }, [categories, loadStories])
+
+  const changeLanguage = async (next: Lang) => {
+    if (next === lang) return
+    if (!window.confirm(t.langWarning)) return
+    try {
+      await fetch('/api/settings', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ language: next }),
+      })
+      setLang(next)
+      setSelected(null)
+      await loadAll()
+    } catch (e) {
+      setError(String(e))
+    }
+  }
 
   const handleDiscover = async (category: Category) => {
     try {
@@ -46,23 +82,87 @@ export default function App() {
       const stories = await api.stories(category.id)
       setStoriesByCat((prev) => ({ ...prev, [category.id]: stories }))
     } catch (e) {
-      setError(`Descubrimiento falló en ${category.title}: ${String(e)}`)
+      setError(`${category.title}: ${String(e)}`)
     }
   }
 
   const allStories = Object.values(storiesByCat).flat()
-  const featured =
-    allStories.find((s) => s.status === 'ready') ??
-    allStories.find((s) => s.status === 'generating') ??
-    allStories[0]
+
+  // Netflix-style rotating hero: one candidate per category (ready > image).
+  const featuredList = useMemo(() => {
+    return categories
+      .map((c) => {
+        const stories = storiesByCat[c.id] ?? []
+        return (
+          stories.find((s) => s.status === 'ready') ??
+          stories.find((s) => s.cover_image) ??
+          stories[0]
+        )
+      })
+      .filter((s): s is Story => Boolean(s))
+  }, [categories, storiesByCat])
+
+  useEffect(() => {
+    if (featuredList.length < 2) return
+    const timer = setInterval(() => {
+      if (!document.hidden) setHeroIdx((i) => (i + 1) % featuredList.length)
+    }, 7000)
+    return () => clearInterval(timer)
+  }, [featuredList.length])
+
+  const featured = featuredList[heroIdx % Math.max(featuredList.length, 1)]
+
+  const trimmed = query.trim().toLowerCase()
+  const searchResults = trimmed
+    ? allStories.filter((s) =>
+        `${s.title} ${s.tagline} ${s.summary}`.toLowerCase().includes(trimmed),
+      )
+    : []
 
   return (
     <div className="min-h-screen bg-ink font-body text-cream">
       <nav className="absolute top-0 right-0 left-0 z-20 flex items-center justify-between px-8 py-6 md:px-14">
-        <span className="font-display text-xl font-800 tracking-[0.35em] text-white">ONDA</span>
-        <div className="flex items-center gap-6 text-sm text-white/60">
-          <button className="cursor-pointer transition hover:text-white">Ajustes</button>
-          <button className="cursor-pointer transition hover:text-white">Dashboard</button>
+        <button
+          onClick={() => setView('home')}
+          className="cursor-pointer font-display text-xl font-800 tracking-[0.35em] text-white"
+        >
+          ONDA
+        </button>
+        <div className="flex items-center gap-5 text-sm text-white/60">
+          {view === 'home' && (
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={t.searchPlaceholder}
+              className="w-40 rounded-full border border-white/10 bg-black/30 px-3.5 py-1.5 text-sm text-cream backdrop-blur-sm transition placeholder:text-white/30 focus:w-56 focus:border-ember/50 focus:outline-none md:w-48"
+            />
+          )}
+          <button
+            onClick={() => setShowInterests(true)}
+            className="cursor-pointer transition hover:text-white"
+          >
+            {t.interests}
+          </button>
+          <button
+            onClick={() => setView(view === 'home' ? 'dashboard' : 'home')}
+            className="cursor-pointer transition hover:text-white"
+          >
+            {view === 'home' ? t.dashboard : t.home}
+          </button>
+          <span className="flex items-center gap-1.5 rounded-full bg-white/5 px-2.5 py-1 text-xs">
+            {LANGS.map((l) => (
+              <button
+                key={l}
+                onClick={() => changeLanguage(l)}
+                className={`cursor-pointer rounded-full px-1.5 py-0.5 uppercase transition ${
+                  l === lang ? 'bg-ember font-bold text-white' : 'text-white/50 hover:text-white'
+                }`}
+              >
+                {l}
+              </button>
+            ))}
+          </span>
         </div>
       </nav>
 
@@ -75,37 +175,72 @@ export default function App() {
         </div>
       )}
 
-      {featured ? (
-        <Hero story={featured} onSelect={setSelected} />
-      ) : (
-        <div className="px-8 pt-28 pb-4 md:px-14">
-          <h1 className="max-w-2xl font-display text-4xl leading-tight font-800 text-white">
-            Tu emisora personal
-          </h1>
-          <p className="mt-3 max-w-lg text-white/60">
-            Pulsa «Descubrir» en cualquier categoría para buscar las historias de hoy.
+      {view === 'dashboard' ? (
+        <Suspense
+          fallback={<p className="px-8 pt-28 text-white/40 md:px-14">{t.loading}</p>}
+        >
+          <Dashboard t={t} />
+        </Suspense>
+      ) : trimmed ? (
+        <main className="px-8 pt-24 pb-20 md:px-14">
+          <p className="mb-5 text-sm text-white/50">
+            {searchResults.length === 0 && `${t.searchEmpty} «${query.trim()}»`}
           </p>
-        </div>
-      )}
+          <div className="flex flex-wrap gap-4">
+            {searchResults.map((story) => (
+              <StoryCard key={story.id} story={story} onClick={() => setSelected(story)} t={t} />
+            ))}
+          </div>
+        </main>
+      ) : (
+        <>
+          {featured ? (
+            <Hero
+              story={featured}
+              onSelect={setSelected}
+              t={t}
+              count={featuredList.length}
+              index={heroIdx % Math.max(featuredList.length, 1)}
+              onDot={setHeroIdx}
+            />
+          ) : (
+            <div className="px-8 pt-28 pb-4 md:px-14">
+              <h1 className="max-w-2xl font-display text-4xl leading-tight font-800 text-white">
+                {t.emptyTitle}
+              </h1>
+              <p className="mt-3 max-w-lg text-white/60">{t.emptySub}</p>
+            </div>
+          )}
 
-      <main className="pb-20">
-        {categories.map((cat) => (
-          <CategoryRow
-            key={cat.id}
-            category={cat}
-            stories={storiesByCat[cat.id] ?? []}
-            onDiscover={handleDiscover}
-            onSelect={setSelected}
-          />
-        ))}
-      </main>
+          <main className="pb-20">
+            {categories.map((cat) => (
+              <CategoryRow
+                key={cat.id}
+                category={cat}
+                stories={storiesByCat[cat.id] ?? []}
+                onDiscover={handleDiscover}
+                onSelect={setSelected}
+                t={t}
+              />
+            ))}
+          </main>
+        </>
+      )}
 
       {selected && (
         <StoryModal
           storyId={selected.id}
           category={categories.find((c) => c.id === selected.category_id)}
           onClose={() => setSelected(null)}
-          onChanged={refreshAll}
+          onChanged={() => loadStories(categories)}
+          t={t}
+        />
+      )}
+      {showInterests && (
+        <InterestsModal
+          t={t}
+          onClose={() => setShowInterests(false)}
+          onApplied={() => loadAll()}
         />
       )}
     </div>

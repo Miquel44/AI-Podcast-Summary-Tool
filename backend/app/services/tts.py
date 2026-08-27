@@ -5,7 +5,8 @@ from pathlib import Path
 from elevenlabs.client import ElevenLabs
 from pydub import AudioSegment
 
-from ..config import settings
+from ..config import TTS_PRICE_PER_1K_CHARS, settings
+from .llm import record_usage
 
 log = logging.getLogger(__name__)
 
@@ -38,4 +39,9 @@ def synthesize_episode(lines: list[dict], hosts: list[dict], out_path: Path) -> 
         log.info("tts line %d/%d done (%.1fs)", i + 1, len(lines), len(segment) / 1000)
 
     audio.export(out_path, format="mp3", bitrate="128k")
+    chars = sum(len(l["text"]) for l in lines)
+    record_usage(
+        "tts", settings.elevenlabs_model, meta=out_path.stem,
+        characters=chars, cost_usd=chars / 1000 * TTS_PRICE_PER_1K_CHARS,
+    )
     return len(audio) / 1000.0
