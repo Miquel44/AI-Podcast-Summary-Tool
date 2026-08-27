@@ -4,42 +4,55 @@ export interface Host {
   persona: string
 }
 
-export interface Show {
+export interface Category {
   id: number
   slug: string
   title: string
-  tagline: string
   interest_prompt: string
-  category: 'tech' | 'finance' | 'politics' | 'history'
   kind: 'news' | 'evergreen'
-  cover_from: string
-  cover_to: string
-  cover_icon: string
-  cover_image: string | null
   hosts: Host[]
   enabled: boolean
+  position: number
+}
+
+export type StoryStatus = 'suggested' | 'generating' | 'ready' | 'failed'
+
+export interface SourceArticle {
+  title: string
+  url: string
+  source: string
+}
+
+export interface Story {
+  id: number
+  category_id: number
+  title: string
+  tagline: string
+  summary: string
+  icon: string
+  cover_from: string
+  cover_to: string
+  source_articles: SourceArticle[]
+  status: StoryStatus
+  created_at: string
 }
 
 export interface Episode {
   id: number
-  show_id: number
+  story_id: number
   title: string
-  status: 'queued' | 'fetching' | 'scripting' | 'tts' | 'ready' | 'failed'
+  script: { host: number; text: string }[]
   audio_path: string | null
   duration_s: number | null
+  error: string | null
   created_at: string
+}
+
+export interface StoryDetail extends Story {
+  episodes: Episode[]
 }
 
 export interface AppSettings {
   default_voice_id: string | null
   default_voice_name: string | null
 }
-
-export const CATEGORY_LABELS: Record<Show['category'], string> = {
-  tech: 'Tecnología e IA',
-  finance: 'Finanzas',
-  politics: 'Política',
-  history: 'Historia',
-}
-
-export const CATEGORY_ORDER: Show['category'][] = ['tech', 'finance', 'politics', 'history']

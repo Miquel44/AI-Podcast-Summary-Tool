@@ -12,6 +12,18 @@ class Settings(BaseSettings):
 
     openai_api_key: str = ""
     elevenlabs_api_key: str = ""
+    gemini_api_key: str = ""
+
+    # Curation (news clustering) — structured JSON work.
+    openai_model: str = "gpt-5.1"
+    # Scriptwriting — GPT-5.6 Sol: best OpenAI writer on EQ-Bench Creative
+    # Writing (Aug 2026; overall #1 is Claude Opus 5, no key available).
+    script_provider: str = "openai"
+    script_model: str = "gpt-5.6-sol"
+    gemini_model: str = "gemini-3.7-flash"
+
+    elevenlabs_model: str = "eleven_multilingual_v2"
+    episode_target_words: int = 800  # ~5 min at spoken pace
 
     # Postgres in docker-compose; SQLite fallback for machines without it.
     database_url: str = f"sqlite:///{BASE_DIR / 'storage' / 'podcast.db'}"

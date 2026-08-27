@@ -8,7 +8,7 @@
   --color-ink-soft: #14141b;
   --color-cream: #f2efe9;
   --color-cream-dim: #b9b5ac;
-  --color-ember: #ff5c38;
+  --color-ember: #e50914;
 }
 
 html {
@@ -28,4 +28,19 @@ body {
 }
 .row-scroll::-webkit-scrollbar {
   display: none;
+}
+
+/* Loading shimmer for cards while the daily edition is being prepared */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.shimmer {
+  background: linear-gradient(100deg, #14141b 40%, #1e1e28 50%, #14141b 60%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite linear;
 }

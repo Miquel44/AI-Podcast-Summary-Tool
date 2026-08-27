@@ -1,19 +1,25 @@
-import type { AppSettings, Episode, Show } from './types'
+import type { AppSettings, Category, Story, StoryDetail } from './types'
 
 async function json<T>(res: Response): Promise<T> {
-  if (!res.ok) throw new Error(`${res.status} ${res.statusText}`)
+  if (!res.ok) {
+    const body = await res.text().catch(() => '')
+    throw new Error(body || `${res.status} ${res.statusText}`)
+  }
   return res.json()
 }
 
 export const api = {
-  shows: () => fetch('/api/shows').then((r) => json<Show[]>(r)),
-  episodes: (showId: number) =>
-    fetch(`/api/shows/${showId}/episodes`).then((r) => json<Episode[]>(r)),
-  updateShow: (showId: number, patch: Partial<Show>) =>
-    fetch(`/api/shows/${showId}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(patch),
-    }).then((r) => json<Show>(r)),
+  categories: () => fetch('/api/categories').then((r) => json<Category[]>(r)),
+  stories: (categoryId: number) =>
+    fetch(`/api/categories/${categoryId}/stories`).then((r) => json<Story[]>(r)),
+  discover: (categoryId: number) =>
+    fetch(`/api/categories/${categoryId}/discover`, { method: 'POST' }).then((r) =>
+      json<Story[]>(r),
+    ),
+  story: (storyId: number) => fetch(`/api/stories/${storyId}`).then((r) => json<StoryDetail>(r)),
+  generate: (storyId: number) =>
+    fetch(`/api/stories/${storyId}/generate`, { method: 'POST' }).then((r) =>
+      json<StoryDetail>(r),
+    ),
   settings: () => fetch('/api/settings').then((r) => json<AppSettings>(r)),
 }

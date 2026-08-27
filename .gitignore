@@ -3,6 +3,9 @@
 .env.*
 !.env.example
 
+# Personal interview notes — never commit
+INTERVIEW_PREP.md
+
 # Dependencies
 node_modules/
 __pycache__/

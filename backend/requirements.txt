@@ -10,3 +10,5 @@ apscheduler==3.11.0
 openai==1.59.7
 elevenlabs==1.50.3
 pydub==0.25.1
+truststore==0.10.0
+google-genai==1.2.0
