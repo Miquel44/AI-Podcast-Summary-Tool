@@ -18,10 +18,11 @@ dist/
 build/
 .next/
 
-# Generated audio (except the required sample.mp3)
+# Generated audio (except the required sample.mp3 and the demo bundle)
 storage/episodes/
 *.mp3
 !sample.mp3
+!demo/*.mp3
 
 # Misc
 .DS_Store

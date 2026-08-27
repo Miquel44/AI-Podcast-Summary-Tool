@@ -106,6 +106,9 @@ export interface Strings {
   searchEmpty: string
   markReplay: string
   markSkip: string
+  playNow: string
+  navDemo: string
+  demoNote: string
 }
 
 export const STRINGS: Record<Lang, Strings> = {
@@ -213,6 +216,9 @@ export const STRINGS: Record<Lang, Strings> = {
     searchEmpty: 'Sin resultados para',
     markReplay: '▲ más repetido',
     markSkip: '▼ más saltado',
+    playNow: '▶ Reproducir',
+    navDemo: 'Demo',
+    demoNote: 'Episodios de muestra pregenerados con el propio producto — el catálogo de la portada se genera cada día con las noticias del momento.',
   },
   en: {
     interests: 'My interests',
@@ -318,6 +324,9 @@ export const STRINGS: Record<Lang, Strings> = {
     searchEmpty: 'No results for',
     markReplay: '▲ most replayed',
     markSkip: '▼ most skipped',
+    playNow: '▶ Play',
+    navDemo: 'Demo',
+    demoNote: 'Sample episodes pre-generated with the product itself — the home catalog is generated daily from current news.',
   },
   ca: {
     interests: 'Els meus interessos',
@@ -423,5 +432,8 @@ export const STRINGS: Record<Lang, Strings> = {
     searchEmpty: 'Sense resultats per a',
     markReplay: '▲ més repetit',
     markSkip: '▼ més saltat',
+    playNow: '▶ Reproduir',
+    navDemo: 'Demo',
+    demoNote: 'Episodis de mostra pregenerats amb el mateix producte — el catàleg de la portada es genera cada dia amb les notícies del moment.',
   },
 }

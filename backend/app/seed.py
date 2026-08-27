@@ -99,6 +99,64 @@ SEED_CATEGORIES = [
 ]
 
 
+def seed_demo(db: Session) -> None:
+    """Seed pre-generated showcase episodes from the committed demo/ bundle.
+
+    The 'demo' category is disabled so it never shows in the home rows or gets
+    refreshed by the scheduler — it is served only by /api/demo (Demo tab).
+    """
+    import json
+    import shutil
+
+    from .config import BASE_DIR, settings
+    from .models import Episode, Story, StoryStatus
+
+    bundle = BASE_DIR / "demo" / "demo_stories.json"
+    if not bundle.exists():
+        return
+    category = db.query(Category).filter(Category.slug == "demo").first()
+    if not category:
+        category = Category(
+            slug="demo", title="Demo", enabled=False, position=999,
+            interest_prompt="Episodios de muestra pregenerados.",
+        )
+        db.add(category)
+        db.flush()
+
+    existing_titles = {s.title for s in category.stories}
+    for item in json.loads(bundle.read_text(encoding="utf-8")):
+        if item["title"] in existing_titles:
+            continue
+        audio_src = BASE_DIR / "demo" / item["audio_file"]
+        audio_dst = settings.storage_dir / "episodes" / item["audio_file"]
+        if audio_src.exists() and not audio_dst.exists():
+            shutil.copy2(audio_src, audio_dst)
+        story = Story(
+            category_id=category.id,
+            title=item["title"],
+            tagline=item.get("tagline", ""),
+            summary=item.get("summary", ""),
+            icon=item.get("icon", "🎙️"),
+            cover_from=item.get("cover_from", "#1e1b4b"),
+            cover_to=item.get("cover_to", "#3b82f6"),
+            cover_image=item.get("cover_image"),
+            cover_credit=item.get("cover_credit"),
+            source_articles=item.get("source_articles", []),
+            status=StoryStatus.ready,
+            language=item.get("language", "es"),
+        )
+        db.add(story)
+        db.flush()
+        db.add(Episode(
+            story_id=story.id,
+            title=item.get("episode_title", item["title"]),
+            script=item.get("script", []),
+            audio_path=f"/storage/episodes/{item['audio_file']}",
+            duration_s=item.get("duration_s"),
+        ))
+    db.commit()
+
+
 def seed_categories(db: Session) -> None:
     existing = {slug for (slug,) in db.query(Category.slug).all()}
     for data in SEED_CATEGORIES:

@@ -4,9 +4,10 @@ import { CategoryRow } from './components/CategoryRow'
 import { Hero } from './components/Hero'
 import { StoryCard } from './components/StoryCard'
 import { InterestsModal } from './components/InterestsModal'
+import { PlayerBar, type NowPlaying } from './components/PlayerBar'
 import { StoryModal } from './components/StoryModal'
 import { LANGS, STRINGS, type Lang } from './i18n'
-import type { Category, Story } from './types'
+import type { Category, Episode, Story, StoryDetail } from './types'
 
 // The dashboard pulls the whole charting library — load it only when opened.
 const Dashboard = lazy(() =>
@@ -19,12 +20,26 @@ export default function App() {
   const [selected, setSelected] = useState<Story | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [lang, setLang] = useState<Lang>('es')
-  const [view, setView] = useState<'home' | 'dashboard'>(
+  const [view, setView] = useState<'home' | 'dashboard' | 'demo'>(
     window.location.hash.startsWith('#dashboard') ? 'dashboard' : 'home',
   )
+  const [demoStories, setDemoStories] = useState<Story[] | null>(null)
+
+  useEffect(() => {
+    if (view !== 'demo' || demoStories) return
+    fetch('/api/demo')
+      .then((r) => r.json())
+      .then(setDemoStories)
+      .catch(() => setDemoStories([]))
+  }, [view, demoStories])
   const [showInterests, setShowInterests] = useState(false)
   const [query, setQuery] = useState('')
   const [heroIdx, setHeroIdx] = useState(0)
+  const [nowPlaying, setNowPlaying] = useState<NowPlaying | null>(null)
+
+  const handlePlay = (story: StoryDetail, episode: Episode) => {
+    setNowPlaying({ story, episode })
+  }
 
   const t = STRINGS[lang]
 
@@ -139,16 +154,22 @@ export default function App() {
             />
           )}
           <button
+            onClick={() => setView('demo')}
+            className={`cursor-pointer transition hover:text-white ${view === 'demo' ? 'font-semibold text-white' : ''}`}
+          >
+            {t.navDemo}
+          </button>
+          <button
             onClick={() => setShowInterests(true)}
             className="cursor-pointer transition hover:text-white"
           >
             {t.interests}
           </button>
           <button
-            onClick={() => setView(view === 'home' ? 'dashboard' : 'home')}
+            onClick={() => setView(view === 'dashboard' ? 'home' : 'dashboard')}
             className="cursor-pointer transition hover:text-white"
           >
-            {view === 'home' ? t.dashboard : t.home}
+            {view === 'dashboard' ? t.home : t.dashboard}
           </button>
           <span className="flex items-center gap-1.5 rounded-full bg-white/5 px-2.5 py-1 text-xs">
             {LANGS.map((l) => (
@@ -181,6 +202,17 @@ export default function App() {
         >
           <Dashboard t={t} />
         </Suspense>
+      ) : view === 'demo' ? (
+        <main className="px-8 pt-24 pb-20 md:px-14">
+          <h1 className="font-display text-3xl font-800 text-white">{t.navDemo}</h1>
+          <p className="mt-2 max-w-xl text-sm text-white/50">{t.demoNote}</p>
+          <div className="mt-6 flex flex-wrap gap-4">
+            {(demoStories ?? []).map((story) => (
+              <StoryCard key={story.id} story={story} onClick={() => setSelected(story)} t={t} />
+            ))}
+          </div>
+          {demoStories === null && <p className="mt-6 text-white/40">{t.loading}</p>}
+        </main>
       ) : trimmed ? (
         <main className="px-8 pt-24 pb-20 md:px-14">
           <p className="mb-5 text-sm text-white/50">
@@ -227,13 +259,23 @@ export default function App() {
         </>
       )}
 
+      {nowPlaying && <div className="h-20" />}
+
       {selected && (
         <StoryModal
           storyId={selected.id}
           category={categories.find((c) => c.id === selected.category_id)}
           onClose={() => setSelected(null)}
           onChanged={() => loadStories(categories)}
+          onPlay={handlePlay}
           t={t}
+        />
+      )}
+      {nowPlaying && (
+        <PlayerBar
+          nowPlaying={nowPlaying}
+          onClose={() => setNowPlaying(null)}
+          onOpenStory={(story) => setSelected(story)}
         />
       )}
       {showInterests && (

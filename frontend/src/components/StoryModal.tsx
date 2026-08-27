@@ -8,12 +8,14 @@ export function StoryModal({
   category,
   onClose,
   onChanged,
+  onPlay,
   t,
 }: {
   storyId: number
   category: Category | undefined
   onClose: () => void
   onChanged: () => void
+  onPlay: (story: StoryDetail, episode: StoryDetail['episodes'][number]) => void
   t: Strings
 }) {
   const [story, setStory] = useState<StoryDetail | null>(null)
@@ -133,16 +135,21 @@ export function StoryModal({
               )}
 
               {episode?.audio_path && (
-                <div className="rounded-xl bg-black/30 p-4">
-                  <p className="mb-2 font-display text-sm font-600 text-white">
-                    {episode.title}
+                <div className="flex items-center justify-between gap-4 rounded-xl bg-black/30 p-4">
+                  <p className="min-w-0 font-display text-sm font-600 text-white">
+                    <span className="block truncate">{episode.title}</span>
                     {episode.duration_s && (
-                      <span className="ml-2 text-white/40">
-                        · {Math.round(episode.duration_s / 60)} {t.min}
+                      <span className="text-white/40">
+                        {Math.round(episode.duration_s / 60)} {t.min}
                       </span>
                     )}
                   </p>
-                  <audio controls src={episode.audio_path} className="w-full" />
+                  <button
+                    onClick={() => onPlay(story, episode)}
+                    className="shrink-0 cursor-pointer rounded-full bg-white px-5 py-2.5 font-display text-sm font-700 text-ink transition hover:scale-105"
+                  >
+                    {t.playNow}
+                  </button>
                 </div>
               )}
 

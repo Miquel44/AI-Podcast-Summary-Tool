@@ -44,6 +44,25 @@ export function Hero({
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-transparent" />
 
+      {count > 1 && onDot && (
+        <>
+          <button
+            onClick={() => onDot((index - 1 + count) % count)}
+            aria-label="Anterior"
+            className="absolute top-1/2 left-2 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-black/35 text-xl text-white/70 backdrop-blur-sm transition hover:bg-black/60 hover:text-white md:left-4"
+          >
+            ‹
+          </button>
+          <button
+            onClick={() => onDot((index + 1) % count)}
+            aria-label="Siguiente"
+            className="absolute top-1/2 right-2 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-black/35 text-xl text-white/70 backdrop-blur-sm transition hover:bg-black/60 hover:text-white md:right-4"
+          >
+            ›
+          </button>
+        </>
+      )}
+
       <div key={story.id} className="hero-fade relative px-8 pt-24 pb-14 md:px-14 md:pt-32">
         <p className="font-display text-xs font-600 tracking-[0.3em] text-white/60 uppercase">
           {t.featured}

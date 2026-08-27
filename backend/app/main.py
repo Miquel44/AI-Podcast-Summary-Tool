@@ -12,8 +12,8 @@ from fastapi.staticfiles import StaticFiles
 
 from .config import BASE_DIR, settings
 from .database import Base, SessionLocal, engine
-from .routers import categories, interests, metrics, settings as settings_router, stories
-from .seed import seed_categories
+from .routers import categories, demo, interests, metrics, settings as settings_router, stories
+from .seed import seed_categories, seed_demo
 
 logging.basicConfig(level=logging.INFO)
 
@@ -31,6 +31,7 @@ app.include_router(stories.router)
 app.include_router(settings_router.router)
 app.include_router(interests.router)
 app.include_router(metrics.router)
+app.include_router(demo.router)
 app.mount("/storage", StaticFiles(directory=settings.storage_dir), name="storage")
 
 
@@ -39,6 +40,7 @@ def on_startup() -> None:
     Base.metadata.create_all(engine)
     with SessionLocal() as db:
         seed_categories(db)
+        seed_demo(db)
     from . import scheduler
 
     scheduler.start()
