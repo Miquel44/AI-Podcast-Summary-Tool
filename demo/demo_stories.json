@@ -1,5 +1,93 @@
 [
  {
+  "title": "Nvidia compra la puerta de la IA abierta",
+  "tagline": "La compañía habría acordado adquirir Hugging Face por unos 12.900 millones de dólares.",
+  "summary": "Nvidia está cerca de comprar Hugging Face, el popular repositorio y hub de modelos de IA de código abierto. La operación reforzaría el control de Nvidia sobre el ecosistema que rodea a sus chips y plataformas de computación. También uniría la infraestructura de hardware con una de las mayores comunidades de modelos y herramientas abiertas.",
+  "icon": "🤗",
+  "cover_from": "#064e3b",
+  "cover_to": "#34d399",
+  "cover_image": "https://techcrunch.com/wp-content/uploads/2025/01/GettyImages-2192223928.jpg?resize=1200,801",
+  "cover_credit": "",
+  "source_articles": [
+   {
+    "title": "Nvidia closes in on Hugging Face acquisition",
+    "url": "https://techcrunch.com/2026/08/26/nvidia-closes-in-on-hugging-face-acquisition/",
+    "source": "TechCrunch AI"
+   },
+   {
+    "title": "Nvidia agrees to acquire Hugging Face for $13B",
+    "url": "https://www.businessinsider.com/nvidia-in-talks-to-buy-hugging-face-13-billion-dollars-2026-8",
+    "source": "Hacker News"
+   }
+  ],
+  "language": "es",
+  "episode_title": "Nvidia y la puerta de entrada a la inteligencia artificial abierta",
+  "script": [
+   {
+    "host": 0,
+    "text": "Nvidia está cerca de quedarse con el lugar donde millones de modelos y conjuntos de datos de inteligencia artificial se publican, se descargan y se convierten en herramientas. El precio atribuido a la operación es de 12.900 millones de dólares."
+   },
+   {
+    "host": 0,
+    "text": "La situación, por ahora, requiere cautela. The Information asegura que Nvidia acordó comprar Hugging Face, pero Business Insider sostiene que todavía no hay un contrato firmado y que las conversaciones podrían romperse. Ninguna de las dos compañías ha respondido a las solicitudes de comentarios."
+   },
+   {
+    "host": 0,
+    "text": "Hugging Face fue fundada en 2016 por Clément Delangue, Julien Chaumond y Thomas Wolf. Se ha convertido en uno de los principales centros de la inteligencia artificial de código abierto: aloja modelos y conjuntos de datos, y ofrece herramientas para que los desarrolladores construyan sobre ellos o los ejecuten con capacidad informática alquilada."
+   },
+   {
+    "host": 0,
+    "text": "Ese último punto ayuda a entender el interés de Nvidia. La empresa no estaría comprando solamente un repositorio, sino una puerta de acceso a los desarrolladores, a sus proyectos y a las cargas de computación que generan cuando entrenan o ejecutan modelos."
+   },
+   {
+    "host": 0,
+    "text": "El negocio central de Nvidia depende de que buena parte de ese trabajo termine en sus chips. Pero OpenAI, Google, Amazon y Anthropic están desarrollando procesadores propios para reducir su dependencia de la compañía. Para Nvidia, una comunidad fuerte de modelos abiertos crea alternativas a esos laboratorios cerrados y puede mantener más actividad sobre hardware disponible en el mercado, incluido el suyo."
+   },
+   {
+    "host": 0,
+    "text": "Nvidia ya ha invertido decenas de miles de millones de dólares en desarrollar sus propios modelos abiertos. También participó en la ronda de financiación de Hugging Face de 2023, cuando la empresa captó 235 millones de dólares y quedó valorada en 4.500 millones."
+   },
+   {
+    "host": 0,
+    "text": "A finales del año pasado, Hugging Face rechazó otra oferta de Nvidia: una inversión de 500 millones de dólares que la habría valorado en 7.000 millones. La explicación entonces fue reveladora. Hugging Face no quería un inversor dominante con capacidad para influir en sus decisiones."
+   },
+   {
+    "host": 0,
+    "text": "Ahora se habla de una compra por casi el triple de aquella valoración de 2023. Microsoft también llegó a reunirse con Hugging Face, aunque esas conversaciones ya no estarían activas."
+   },
+   {
+    "host": 0,
+    "text": "La posible adquisición encaja con la posición pública que Clément Delangue ha adoptado durante este año. El director ejecutivo de Hugging Face se ha alineado con la defensa de los modelos abiertos promovida por Nvidia, mientras funcionarios de Washington estudiaban posibles restricciones para los modelos con pesos abiertos."
+   },
+   {
+    "host": 0,
+    "text": "Ese debate se ha vuelto más urgente por los avances de laboratorios chinos. Moonshot AI, por ejemplo, publicó Kimi K3, un sistema que igualó a modelos estadounidenses punteros en pruebas comparativas y que costaba bastante menos ejecutar. Delangue ha advertido que China domina claramente la inteligencia artificial de código abierto."
+   },
+   {
+    "host": 0,
+    "text": "Delangue también contó que Hugging Face utilizó una versión modificada por Nvidia de un modelo chino abierto para defenderse después de un ciberataque. Y firmó, junto con el director ejecutivo de Nvidia, Jensen Huang, y otras veinticuatro empresas, una carta que pedía al Gobierno estadounidense apoyar los modelos abiertos en lugar de restringirlos."
+   },
+   {
+    "host": 0,
+    "text": "Hay además una dimensión de computación en la nube. Nvidia redujo hace aproximadamente un año su servicio DGX Cloud. Hugging Face ya permite ejecutar modelos con potencia informática alquilada, de modo que comprarla ofrecería a Nvidia una vía de regreso a ese mercado sin tener que reconstruirla desde cero."
+   },
+   {
+    "host": 0,
+    "text": "También podría resolver un riesgo financiero. Nvidia se ha comprometido a cubrir parte del coste de acuerdos de computación en la nube por decenas de miles de millones de dólares para sus clientes. Si esos clientes no consumen toda la capacidad contratada, Nvidia podría quedarse con el excedente; Hugging Face le daría un canal para venderlo a sus propios usuarios."
+   },
+   {
+    "host": 0,
+    "text": "La operación, sin embargo, pondría a prueba una de las mayores fortalezas de Hugging Face: su neutralidad. La plataforma admite modelos y hardware de distintas compañías, incluidos competidores de Nvidia como AMD e Intel."
+   },
+   {
+    "host": 0,
+    "text": "Ahí está la cuestión que va más allá del precio. Nvidia podría unir sus chips, su capacidad en la nube y una de las mayores comunidades de modelos abiertos. La puerta seguiría llamándose abierta, pero tendría dueño."
+   }
+  ],
+  "duration_s": 252.459,
+  "audio_file": "demo_nvidia.mp3"
+ },
+ {
   "title": "ChatGPT prepara anuncios en India",
   "tagline": "OpenAI empezará a mostrar publicidad en las modalidades gratuita y Go de su chatbot.",
   "summary": "OpenAI planea introducir anuncios en ChatGPT para los usuarios de India que utilizan los niveles Free y Go. El país representa una audiencia especialmente importante, con más de 100 millones de usuarios activos semanales de ChatGPT. La decisión abre una nueva vía de monetización para el servicio, hasta ahora centrado en suscripciones y productos empresariales.",
@@ -16,70 +104,66 @@
    }
   ],
   "language": "es",
-  "episode_title": "ChatGPT abre la puerta a la publicidad en India",
+  "episode_title": "ChatGPT abre la puerta a los anuncios en India",
   "script": [
    {
     "host": 0,
-    "text": "ChatGPT va a empezar a mostrar anuncios en India. No solo a quienes usan el servicio gratis, sino también a los usuarios de Go, su modalidad de menor precio."
+    "text": "Más de cien millones de personas usan ChatGPT cada semana en India. Una parte considerable no paga por el servicio o utiliza su modalidad más barata, y OpenAI quiere empezar a monetizar esa escala con publicidad."
    },
    {
     "host": 0,
-    "text": "Es un cambio relevante para OpenAI porque añade una tercera fuente de ingresos a gran escala. Hasta ahora, el negocio visible de ChatGPT descansaba sobre todo en las suscripciones y en los productos que la empresa vende a organizaciones y desarrolladores."
+    "text": "La compañía comenzará a mostrar anuncios a los usuarios de ChatGPT Free y ChatGPT Go en el país. La medida ya estaba anticipada en un cambio reciente de sus condiciones de servicio, donde OpenAI indicó que los usuarios podrían ver publicidad mientras utilizan el asistente."
    },
    {
     "host": 0,
-    "text": "India es un lugar lógico para probar esta vía. ChatGPT supera allí los cien millones de usuarios activos semanales, una audiencia enorme, aunque no necesariamente fácil de convertir en suscripciones con precios diseñados inicialmente para otros mercados."
+    "text": "La inclusión de Go es significativa porque no es una modalidad completamente gratuita. Es la suscripción de menor precio de ChatGPT y OpenAI la lanzó en India en agosto de 2025 por menos de cinco dólares. También realizó una promoción limitada que permitía usarla gratis durante un año."
    },
    {
     "host": 0,
-    "text": "El nivel Go intenta cubrir precisamente ese espacio entre el acceso gratuito y los planes más caros. Ofrece una opción más asequible, pero la llegada de anuncios indica que esa cuota reducida puede no bastar por sí sola para cubrir el uso del servicio y sostener el crecimiento."
+    "text": "OpenAI empezará trabajando con cincuenta marcas y se ha asociado con los grupos publicitarios WPP y Omnicom. El próximo mes lanzará además un gestor de anuncios para que otras empresas creen sus propias campañas."
    },
    {
     "host": 0,
-    "text": "Cada conversación tiene un coste. Cuando alguien escribe una consulta, el sistema debe procesar los tokens de entrada, ejecutar el modelo en centros de datos y generar la respuesta token a token. Cuanto más complejo es el modelo, más largo es el contexto y más extensa es la respuesta, mayor puede ser el consumo de cómputo."
+    "text": "La barrera de entrada será relativamente baja: un presupuesto mínimo de setecientas veinticinco rupias diarias, equivalentes a unos siete dólares con sesenta centavos. Según la presentación comercial de OpenAI, la idea es mostrar empresas en momentos relevantes y con mucho contexto, cuando una decisión del usuario empieza a tomar forma."
    },
    {
     "host": 0,
-    "text": "A eso se suman el almacenamiento, los sistemas de seguridad, la búsqueda web cuando está disponible y la infraestructura necesaria para atender picos de demanda. El coste por interacción puede bajar con chips mejores, modelos más eficientes y técnicas de optimización, pero cien millones de usuarios semanales convierten cualquier fracción de coste en una cifra considerable."
+    "text": "Esa descripción apunta al valor diferencial que OpenAI quiere vender a los anunciantes: no solo una audiencia grande, sino el contexto de lo que una persona está intentando resolver. Pero el anuncio no explica el funcionamiento técnico del sistema, el formato de la publicidad ni cómo se separará un anuncio de la respuesta generada por el modelo."
    },
    {
     "host": 0,
-    "text": "La publicidad cambia esa ecuación. Un usuario que no paga una suscripción puede generar ingresos mientras consulta el chatbot, siempre que OpenAI encuentre formatos que los anunciantes consideren útiles y que no deterioren demasiado la experiencia."
+    "text": "Tampoco detalla qué señales se utilizarán para seleccionar los anuncios. Por ahora, lo confirmado es que aparecerán durante el uso del asistente y que afectarán a las modalidades Free y Go, no a los planes Plus y Pro mencionados en los datos de suscripciones."
    },
    {
     "host": 0,
-    "text": "La cuestión decisiva será dónde aparecen esos anuncios y cómo se separan de la respuesta del modelo. No es lo mismo mostrar una pieza patrocinada claramente identificada junto a la conversación que permitir que un interés comercial influya en las recomendaciones redactadas por ChatGPT."
+    "text": "India no es un mercado elegido al azar. OpenAI afirmó en febrero que allí tenía más de cien millones de usuarios activos semanales, muchos de ellos concentrados precisamente en Free y Go, aunque no dio un reparto exacto."
    },
    {
     "host": 0,
-    "text": "Un chatbot ocupa una posición especialmente delicada. Un buscador suele presentar varios enlaces y deja visible, al menos en parte, de dónde procede cada resultado. Una respuesta conversacional sintetiza la información con una sola voz, y eso puede hacer más difícil distinguir entre una conclusión del modelo, una fuente recuperada y una promoción pagada."
+    "text": "La empresa lleva tiempo cultivando esa base de usuarios. Además del precio reducido y la promoción de Go, ha anunciado sus productos durante grandes torneos de críquet, como la liga femenina Women’s Premier League y la Indian Premier League. Más recientemente contrató al responsable de Uber en India para dirigir su expansión en el país."
    },
    {
     "host": 0,
-    "text": "Por ahora, el anuncio del despliegue no resuelve todos esos detalles técnicos y de diseño. Queda por ver qué información se utilizará para seleccionar la publicidad, hasta qué punto dependerá del contenido de la conversación y qué controles recibirán los usuarios."
+    "text": "La publicidad tampoco comienza allí desde cero. OpenAI empezó a mostrar anuncios a usuarios de Estados Unidos en febrero y amplió el programa a Europa este mismo mes. India añade una audiencia de enorme tamaño y una presencia especialmente fuerte de las modalidades con menos ingresos directos por usuario."
    },
    {
     "host": 0,
-    "text": "También habrá que observar si los anuncios se incorporan como una capa independiente. Esa separación permitiría generar primero la respuesta y decidir después qué publicidad mostrar, sin alterar los pesos del modelo ni sus instrucciones. Pero incluso así, la ubicación y el contexto pueden influir en cómo interpreta el usuario la respuesta."
+    "text": "El movimiento llega mientras OpenAI intenta ampliar y consolidar sus fuentes de ingresos antes de una posible oferta pública inicial, prevista para este año o el próximo. Hasta ahora, el negocio se había apoyado principalmente en suscripciones y productos empresariales."
    },
    {
     "host": 0,
-    "text": "Hay otra consecuencia empresarial. Si el experimento funciona en India, OpenAI tendrá una referencia para llevar anuncios a otros mercados con mucho uso gratuito. La compañía podría ampliar ingresos sin depender únicamente de que cada persona pague una cuota mensual."
+    "text": "Las cifras muestran la velocidad de ese crecimiento. OpenAI registró ingresos de seis mil setecientos millones de dólares en el segundo trimestre de 2026, frente a cinco mil setecientos millones en el trimestre anterior."
    },
    {
     "host": 0,
-    "text": "Al mismo tiempo, entra en un terreno conocido por Google y otras plataformas: el conflicto entre ofrecer la respuesta más útil y maximizar el valor comercial de la atención. En un asistente que puede recomendar productos, viajes, servicios o herramientas de software, esa tensión aparece dentro de una conversación que el usuario percibe como personal."
+    "text": "La empresa también aspira a alcanzar doscientos veinte millones de suscriptores de pago en 2030. El pasado noviembre tenía treinta y cinco millones de usuarios de los planes Plus y Pro, una distancia considerable respecto a ese objetivo."
    },
    {
     "host": 0,
-    "text": "India será, por tanto, algo más que un mercado publicitario. Será una prueba de si OpenAI puede financiar el uso masivo de sus modelos sin debilitar la confianza en sus respuestas."
-   },
-   {
-    "host": 0,
-    "text": "Durante años, la pregunta sobre ChatGPT fue qué podía hacer el modelo. Ahora empieza otra: quién paga cada respuesta y qué obtiene a cambio."
+    "text": "La publicidad ofrece otra vía para convertir el uso masivo en ingresos, incluso cuando el usuario no contrata una suscripción completa. Y deja abierta una cuestión que será central para ChatGPT: cómo aprovechar el contexto de una conversación con fines comerciales sin confundir la recomendación del modelo con el mensaje de un anunciante."
    }
   ],
-  "duration_s": 229.443,
+  "duration_s": 208.852,
   "audio_file": "demo_tech.mp3"
  },
  {
@@ -93,74 +177,82 @@
   "cover_credit": "Foto: Jorge Lascar · CC BY (Openverse)",
   "source_articles": [],
   "language": "es",
-  "episode_title": "La Segunda República: reforma, conflicto y ruptura",
+  "episode_title": "La Segunda República: cinco años antes de la guerra",
   "script": [
    {
     "host": 0,
-    "text": "El 14 de abril de 1931, España amaneció monárquica y terminó el día con una república. No hubo una revolución armada: unas elecciones municipales habían mostrado el hundimiento de la Corona en las ciudades, Alfonso XIII abandonó el país y la bandera tricolor apareció en los ayuntamientos."
+    "text": "El 14 de abril de 1931, Alfonso XIII abandonó España sin abdicar. La República llegó entre celebraciones, pero heredó un país con enormes desigualdades, un Ejército sobredimensionado, una Iglesia muy influyente y una sociedad que ya desconfiaba de sus adversarios políticos."
    },
    {
     "host": 0,
-    "text": "La monarquía llegaba debilitada por su apoyo a la dictadura de Miguel Primo de Rivera. El nuevo régimen heredaba, además, un país con enormes desigualdades rurales, un Ejército sobredimensionado, una Iglesia muy influyente y fuertes demandas de autonomía en Cataluña y el País Vasco."
+    "text": "Dos días antes, las candidaturas republicanas habían vencido en la mayoría de las grandes ciudades durante unas elecciones municipales. Aunque los monárquicos obtuvieron más concejales en el conjunto del país, el resultado urbano se interpretó como un rechazo definitivo a la Corona."
    },
    {
     "host": 0,
-    "text": "El gobierno provisional convocó elecciones constituyentes. La Constitución de diciembre de 1931 definió España como una república democrática, reconoció derechos civiles, abrió la puerta a las autonomías, estableció un Estado laico y concedió el voto a las mujeres. Clara Campoamor fue decisiva en aquella conquista, aplicada por primera vez en unas elecciones generales en 1933."
+    "text": "El gobierno provisional reunió a republicanos de distintas tendencias y a socialistas. Niceto Alcalá-Zamora pasó a presidir la República, mientras Manuel Azaña asumía primero el Ministerio de la Guerra y después la jefatura del Gobierno."
    },
    {
     "host": 0,
-    "text": "Manuel Azaña, primero ministro y después jefe del Gobierno, encarnó el impulso reformista. Su reforma militar pretendía reducir el número de oficiales y asegurar la obediencia del Ejército al poder civil. Muchos militares la interpretaron como una humillación, aunque su alcance real fue limitado."
+    "text": "La Constitución de diciembre de 1931 definió España como una república democrática y laica. Reconoció el sufragio femenino, el matrimonio civil y el divorcio, abrió la puerta a las autonomías y permitió que la propiedad quedara subordinada al interés público."
    },
    {
     "host": 0,
-    "text": "En educación, la República emprendió uno de sus proyectos más ambiciosos: construir escuelas, contratar maestros y llevar bibliotecas y cultura a zonas rurales. La intención era reducir el analfabetismo y apartar la enseñanza pública del control religioso. Los recursos, sin embargo, nunca alcanzaron para cumplir todas las expectativas."
+    "text": "La reforma educativa fue uno de los proyectos más ambiciosos. Se construyeron miles de escuelas, aumentó el número de maestros y se impulsó una enseñanza pública y laica en un país donde el analfabetismo seguía siendo elevado."
    },
    {
     "host": 0,
-    "text": "La reforma agraria buscaba asentar campesinos sin tierra en grandes propiedades poco explotadas, sobre todo en el sur. La ley llegó en 1932, pero la burocracia, la falta de dinero y la resistencia de los propietarios ralentizaron su aplicación. Para los terratenientes era una amenaza; para muchos jornaleros, una promesa incumplida."
+    "text": "Azaña intentó reducir el exceso de oficiales y someter plenamente el Ejército al poder civil. También cerró la Academia General Militar de Zaragoza. Parte de los mandos entendió estas medidas como una agresión, aunque la reforma no desmanteló el poder militar."
    },
    {
     "host": 0,
-    "text": "Ese mismo año, el general José Sanjurjo encabezó un golpe que fracasó. También se aprobó el Estatuto de Autonomía de Cataluña. La República avanzaba, pero cada reforma abría un frente con quienes temían perder poder y frustraba a quienes exigían cambios más rápidos."
+    "text": "La relación con la Iglesia se volvió otro foco de conflicto. La Constitución limitó la financiación estatal del clero y la actividad docente de las órdenes religiosas. La quema de conventos de mayo de 1931, mal contenida por el Gobierno, agravó el miedo y el rechazo de muchos católicos."
    },
    {
     "host": 0,
-    "text": "La tensión social produjo huelgas, ocupaciones de tierras y levantamientos anarquistas. En enero de 1933, una insurrección en Casas Viejas, Cádiz, terminó con una dura acción policial y más de veinte muertos. El escándalo dañó profundamente al gobierno de Azaña."
+    "text": "En el campo, la reforma agraria pretendía expropiar grandes propiedades mal explotadas y asentar campesinos. Su aplicación fue lenta, burocrática y mucho menor de lo esperado. Los propietarios la consideraron una amenaza; los jornaleros, una promesa incumplida."
    },
    {
     "host": 0,
-    "text": "Las elecciones de noviembre de 1933 dieron la victoria parlamentaria a las derechas. La Confederación Española de Derechas Autónomas, dirigida por José María Gil-Robles, fue el grupo más numeroso, aunque gobernó el Partido Radical de Alejandro Lerroux con su apoyo. Parte de la izquierda vio aquel giro no como una alternancia legítima, sino como una amenaza contra la República."
+    "text": "Cataluña obtuvo un estatuto de autonomía en 1932 y recuperó la Generalitat. Ese mismo año fracasó el golpe encabezado por el general José Sanjurjo. La República parecía resistir, pero acumulaba enemigos tanto entre la derecha monárquica como entre anarquistas y revolucionarios impacientes."
    },
    {
     "host": 0,
-    "text": "Cuando ministros de la confederación derechista entraron en el Gobierno en octubre de 1934, socialistas y otras fuerzas convocaron una insurrección. Fracasó casi en toda España, pero en Asturias derivó en una revolución obrera que duró dos semanas. El Ejército de África participó en la represión, dirigida desde Madrid por el general Francisco Franco, y hubo más de un millar de muertos."
+    "text": "En enero de 1933, una insurrección anarquista en Casas Viejas terminó con una represión brutal. La responsabilidad política desgastó profundamente a Azaña. En las elecciones de noviembre, las primeras en las que votaron las mujeres, la izquierda llegó dividida y perdió."
    },
    {
     "host": 0,
-    "text": "En Cataluña, Lluís Companys proclamó un Estado catalán dentro de una supuesta república federal. El movimiento fue sofocado, el gobierno autonómico encarcelado y el Estatuto suspendido. Octubre de 1934 dejó una herida doble: revolución para unos, represión para otros."
+    "text": "La Confederación Española de Derechas Autónomas, la CEDA, obtuvo el mayor número de diputados, pero gobernó inicialmente el Partido Radical de Alejandro Lerroux. Las reformas anteriores se frenaron o revisaron, y el conflicto social se endureció."
    },
    {
     "host": 0,
-    "text": "El gobierno de centroderecha acabó desacreditado por divisiones y escándalos de corrupción. En febrero de 1936 venció el Frente Popular, una coalición de republicanos de izquierda y partidos obreros. Su ventaja en votos fue reducida, pero el sistema electoral le dio una mayoría amplia de escaños."
+    "text": "Cuando tres ministros de la CEDA entraron en el Gobierno en octubre de 1934, la izquierda obrera convocó una insurrección. Fracasó en casi toda España, salvo en Asturias, donde los mineros sostuvieron durante dos semanas una revuelta armada que fue aplastada por tropas trasladadas desde África."
    },
    {
     "host": 0,
-    "text": "El nuevo poder amnistió a los presos de 1934 y reactivó las reformas. Azaña pasó a la presidencia de la República y Santiago Casares Quiroga asumió el Gobierno. Mientras crecían las ocupaciones de tierras, los choques callejeros y los ataques contra edificios religiosos, falangistas y grupos revolucionarios también recurrieron a la violencia."
+    "text": "En Cataluña, Lluís Companys proclamó un Estado catalán dentro de una futura república federal. El Ejército sofocó el intento y la autonomía quedó suspendida. La represión de octubre dejó miles de detenidos y convirtió la amnistía en una exigencia central de la izquierda."
    },
    {
     "host": 0,
-    "text": "Una conspiración militar llevaba meses organizándose bajo la dirección del general Emilio Mola. El asesinato del teniente socialista José Castillo y, como represalia, el del dirigente monárquico José Calvo Sotelo aceleraron los preparativos, pero no crearon la conspiración."
+    "text": "Los escándalos de corrupción hundieron al Partido Radical y provocaron nuevas elecciones en febrero de 1936. El Frente Popular, una coalición de republicanos de izquierda, socialistas y otras fuerzas, venció y obtuvo mayoría parlamentaria. Alcalá-Zamora fue destituido y Azaña pasó a presidir la República."
    },
    {
     "host": 0,
-    "text": "El 17 de julio de 1936 se sublevó parte del Ejército en el protectorado de Marruecos; al día siguiente, el golpe se extendió a la península. Los rebeldes esperaban tomar el poder rápidamente. Fracasaron en ciudades decisivas, mientras el Gobierno conservó otras y entregó armas a organizaciones obreras."
+    "text": "El nuevo Gobierno liberó a los presos de 1934, restauró reformas y reactivó la autonomía catalana. Al mismo tiempo crecieron las huelgas, las ocupaciones de tierras, los atentados y los choques entre falangistas, socialistas, anarquistas y fuerzas de seguridad."
    },
    {
     "host": 0,
-    "text": "La Segunda República no desapareció aquella noche: mantuvo un gobierno y combatió hasta 1939. Pero el golpe incompleto destruyó la posibilidad de resolver el conflicto mediante elecciones y parlamentos. Cinco años de reformas, resistencias, errores y miedo desembocaron así no en un desenlace inevitable, sino en una guerra abierta por quienes decidieron imponerlo con las armas."
+    "text": "Una conspiración militar dirigida por el general Emilio Mola avanzaba desde hacía meses. El asesinato del teniente José Castillo y, al día siguiente, el del dirigente monárquico José Calvo Sotelo aceleraron los preparativos, pero no crearon por sí solos la conspiración."
+   },
+   {
+    "host": 0,
+    "text": "El golpe comenzó el 17 de julio de 1936 en el protectorado de Marruecos y se extendió a la península al día siguiente. Triunfó en parte del país y fracasó en otra. Ese fracaso parcial convirtió una sublevación en una guerra de casi tres años."
+   },
+   {
+    "host": 0,
+    "text": "La República continuó existiendo hasta 1939, pero su etapa de reformas en paz terminó aquel julio. Nada obligaba a que sus conflictos desembocaran inevitablemente en una guerra; fueron decisiones concretas, conspiraciones y violencias sucesivas las que cerraron el espacio de la política."
    }
   ],
-  "duration_s": 391.38,
+  "duration_s": 373.018,
   "audio_file": "demo_historia.mp3"
  },
  {
@@ -180,66 +272,62 @@
    }
   ],
   "language": "es",
-  "episode_title": "El foro que volvió a poner nervioso a Wall Street",
+  "episode_title": "El foro que volvió a poner contra las cuerdas a Wall Street",
   "script": [
    {
     "host": 0,
-    "text": "Una acción empieza a subir con violencia. No hay un cambio equivalente en sus beneficios ni una noticia empresarial capaz de explicar el movimiento. Lo que sí hay es una multitud de inversores reunida en un foro, comprando y señalando el mismo punto débil: varios fondos habían apostado por una caída."
+    "text": "Bastó que un grupo de inversores concentrara sus compras en una sola acción para alterar el equilibrio. El precio subió con fuerza y varios fondos de cobertura que apostaban por una caída quedaron bajo presión."
    },
    {
     "host": 0,
-    "text": "La dinámica resulta familiar porque recuerda a las acciones meme que sacudieron Wall Street en 2021. Entonces, comunidades de inversores minoristas convirtieron valores como GameStop y AMC en operaciones colectivas de enorme escala. Ahora, un nuevo episodio demuestra que aquella capacidad de coordinación no desapareció."
+    "text": "La escena resulta familiar. Recuerda a las llamadas acciones meme de años anteriores: valores que atraen una oleada de interés en internet y cuyo precio empieza a moverse, al menos durante un tiempo, más por el impulso colectivo que por un cambio conocido en el negocio de la empresa."
    },
    {
     "host": 0,
-    "text": "Para entender la presión sobre los fondos hay que empezar por una posición bajista. Un inversor toma prestadas acciones y las vende, con la intención de recomprarlas más baratas y devolverlas. Si el precio baja, gana la diferencia; si sube, la pérdida puede seguir creciendo porque, en teoría, una acción no tiene un techo."
+    "text": "La clave está en la concentración. Una compra aislada apenas afecta a una acción con suficiente negociación, pero muchas órdenes dirigidas al mismo valor y en un periodo corto pueden desequilibrar la oferta y la demanda. Si aparecen más compradores que vendedores dispuestos a aceptar el precio vigente, la cotización sube."
    },
    {
     "host": 0,
-    "text": "Cuando muchas posiciones bajistas se concentran en el mismo valor, una subida rápida crea un problema. Los fondos reciben exigencias de garantías, reducen riesgo y algunos terminan recomprando las acciones que habían vendido. Esas recompras añaden demanda y empujan todavía más el precio."
+    "text": "Al otro lado estaban los fondos con posiciones bajistas. Una posición bajista busca ganar dinero si una acción pierde valor. El problema aparece cuando ocurre lo contrario: cuanto más sube el precio, mayor puede ser la pérdida."
    },
    {
     "host": 0,
-    "text": "Eso es un estrangulamiento de posiciones cortas, lo que en el mercado suele llamarse short squeeze. La clave es que los bajistas no compran porque hayan cambiado de opinión sobre la empresa. Compran porque el movimiento en su contra amenaza con superar sus límites de pérdidas o la liquidez disponible."
+    "text": "Esa presión puede obligar a algunos inversores bajistas a cerrar su posición. Para hacerlo, necesitan comprar la acción, y esas compras añaden todavía más demanda a un mercado que ya está acelerando. Así, el movimiento inicial puede alimentarse a sí mismo."
    },
    {
     "host": 0,
-    "text": "Los foros pueden acelerar ese proceso. Miles de participantes comparten datos sobre posiciones bajistas, volumen negociado y contratos de opciones. Si suficientes personas compran al mismo tiempo, una acción relativamente pequeña o con pocas acciones disponibles puede moverse mucho más de lo que justificaría una orden individual."
+    "text": "Eso explica por qué un foro puede poner contra las cuerdas a participantes con mucho más capital. No porque los inversores minoristas controlen el mercado en condiciones normales, sino porque pueden concentrarse en un punto concreto donde existe una posición bajista vulnerable."
    },
    {
     "host": 0,
-    "text": "Las opciones añaden otra capa. Cuando los minoristas compran opciones que se benefician de una subida, los intermediarios que las venden suelen cubrir su riesgo comprando acciones. Si el precio continúa avanzando, necesitan comprar más, y esa cobertura puede reforzar el impulso inicial."
+    "text": "Pero una subida rápida no elimina el riesgo; lo redistribuye. Los primeros compradores pueden obtener grandes ganancias si venden a tiempo. Quienes entran cuando el precio ya se ha disparado se exponen a una caída igualmente brusca cuando se agota la demanda o cambia el ánimo del grupo."
    },
    {
     "host": 0,
-    "text": "Nada de esto significa que el foro controle por completo el mercado. También intervienen operadores profesionales, algoritmos y fondos que detectan el movimiento y tratan de aprovecharlo. Una historia que comienza como minoristas contra Wall Street puede convertirse rápidamente en una batalla entre distintos tipos de capital, con los pequeños inversores en medio."
+    "text": "La volatilidad extrema tampoco distingue entre profesionales y particulares. Un fondo puede sufrir pérdidas significativas por mantener su apuesta bajista, mientras un pequeño inversor puede comprar cerca del máximo y quedar atrapado en la corrección. El hecho de actuar junto a miles de personas no convierte una operación especulativa en una inversión segura."
    },
    {
     "host": 0,
-    "text": "El riesgo aparece cuando la subida se alimenta principalmente de la expectativa de que llegará otro comprador. El precio puede separarse durante días de los ingresos, la deuda y las perspectivas reales de la empresa. Y cuando la demanda pierde fuerza, la caída suele ser tan rápida como el ascenso."
+    "text": "El episodio también recupera una pregunta incómoda: dónde termina la conversación legítima entre inversores y dónde empieza la manipulación del mercado. Compartir una opinión sobre una acción forma parte habitual de la vida financiera. Coordinar compras con la intención de forzar el precio plantea una cuestión distinta, aunque la frontera no siempre sea evidente al leer mensajes dispersos en un foro."
    },
    {
     "host": 0,
-    "text": "Los primeros participantes pueden obtener ganancias considerables. Quienes entran tarde, atraídos por capturas de pantalla y mensajes de urgencia, compran a precios mucho más exigentes. Si además utilizan opciones a corto plazo o dinero prestado, una corrección moderada puede convertirse en una pérdida casi total."
+    "text": "Para el mercado, el interés de este caso no está solo en la acción concreta. Está en la capacidad de las redes para reunir capital minorista con rapidez y dirigirlo hacia una posición conocida. Esa coordinación puede crear movimientos que los modelos tradicionales no anticipan bien, porque el detonante no es un resultado empresarial, una decisión de la Reserva Federal o un dato macroeconómico."
    },
    {
     "host": 0,
-    "text": "El episodio también recupera una pregunta incómoda para los reguladores. Hablar públicamente de una inversión, defender una tesis y comprar junto a otras personas no constituye por sí mismo manipulación. Los analistas, los gestores y los medios llevan décadas influyendo en las expectativas del mercado."
+    "text": "Es un flujo de órdenes nacido de una conversación colectiva. Y cuando ese flujo encuentra un mercado desequilibrado, puede pesar más que cualquier valoración durante unas horas o unos días."
    },
    {
     "host": 0,
-    "text": "La frontera cambia cuando aparecen afirmaciones falsas, acuerdos ocultos, identidades coordinadas o intentos deliberados de crear un precio artificial para vender después. El problema es probar la intención en una comunidad dispersa, donde conviven análisis auténticos, entusiasmo, intereses económicos y mensajes anónimos."
+    "text": "Wall Street ya había aprendido esta lección con las acciones meme, pero el mecanismo sigue disponible. Los fondos pueden vigilar mejor sus posiciones bajistas y medir la conversación en internet, aunque no pueden impedir que una multitud decida comprar el mismo valor."
    },
    {
     "host": 0,
-    "text": "Para el mercado general, estas operaciones no tienen el peso de una decisión de la Reserva Federal, de los resultados de una gran tecnológica o de un dato de inflación. Pero sí revelan dónde se acumula la fragilidad. Una posición bajista demasiado concurrida puede ser correcta sobre el negocio y, aun así, resultar ruinosa por el camino."
-   },
-   {
-    "host": 0,
-    "text": "La lección no es que los foros siempre ganen ni que los fondos hayan perdido el control de Wall Street. Es más concreta: una multitud conectada puede encontrar una apuesta saturada y convertirla en un problema de liquidez. En esos momentos, el precio deja de contar solamente cuánto vale una empresa y empieza a mostrar quién puede resistir un día más."
+    "text": "La paradoja es que una red capaz de desafiar a grandes fondos también puede trasladar el riesgo a sus propios participantes. El poder colectivo mueve el precio; no garantiza quién saldrá ganando cuando el movimiento termine."
    }
   ],
-  "duration_s": 282.383,
+  "duration_s": 219.58,
   "audio_file": "demo_finanzas.mp3"
  }
 ]

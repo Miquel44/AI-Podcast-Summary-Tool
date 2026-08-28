@@ -1,0 +1,1222 @@
+[
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "tech",
+  "input_tokens": 5369,
+  "output_tokens": 1387,
+  "characters": 0,
+  "cost_usd": 0.013691,
+  "created_at": "2026-08-27T15:15:55.094979"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "finance",
+  "input_tokens": 1790,
+  "output_tokens": 1479,
+  "characters": 0,
+  "cost_usd": 0.010664,
+  "created_at": "2026-08-27T15:16:15.896544"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "us",
+  "input_tokens": 4811,
+  "output_tokens": 1510,
+  "characters": 0,
+  "cost_usd": 0.013871,
+  "created_at": "2026-08-27T15:16:36.746666"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "colombia",
+  "input_tokens": 3952,
+  "output_tokens": 1562,
+  "characters": 0,
+  "cost_usd": 0.013324,
+  "created_at": "2026-08-27T15:16:55.984849"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "spain",
+  "input_tokens": 5362,
+  "output_tokens": 1605,
+  "characters": 0,
+  "cost_usd": 0.014992,
+  "created_at": "2026-08-27T15:17:13.158291"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "history",
+  "input_tokens": 335,
+  "output_tokens": 1311,
+  "characters": 0,
+  "cost_usd": 0.008201,
+  "created_at": "2026-08-27T15:17:28.433966"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "tech",
+  "input_tokens": 741,
+  "output_tokens": 1262,
+  "characters": 0,
+  "cost_usd": 0.041565,
+  "created_at": "2026-08-27T15:49:13.434513"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "episode_1",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 4537,
+  "cost_usd": 0.81666,
+  "created_at": "2026-08-27T15:49:55.589848"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 780,
+  "output_tokens": 501,
+  "characters": 0,
+  "cost_usd": 0.003786,
+  "created_at": "2026-08-27T15:57:39.476321"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "tech",
+  "input_tokens": 672,
+  "output_tokens": 1206,
+  "characters": 0,
+  "cost_usd": 0.03954,
+  "created_at": "2026-08-27T16:00:51.940274"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "episode_2",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 4154,
+  "cost_usd": 0.74772,
+  "created_at": "2026-08-27T16:01:29.709530"
+ },
+ {
+  "kind": "analysis",
+  "model": "gpt-5.6-sol",
+  "meta": "tech",
+  "input_tokens": 677,
+  "output_tokens": 402,
+  "characters": 0,
+  "cost_usd": 0.015445,
+  "created_at": "2026-08-27T21:15:22.066723"
+ },
+ {
+  "kind": "llm",
+  "model": "gpt-5.6-luna",
+  "meta": "",
+  "input_tokens": 110,
+  "output_tokens": 65,
+  "characters": 0,
+  "cost_usd": 0.0005,
+  "created_at": "2026-08-27T21:18:46.884255"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "tecnologia-e-ia",
+  "input_tokens": 2604,
+  "output_tokens": 1368,
+  "characters": 0,
+  "cost_usd": 0.010812,
+  "created_at": "2026-08-27T21:19:16.152372"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 303,
+  "output_tokens": 208,
+  "characters": 0,
+  "cost_usd": 0.001551,
+  "created_at": "2026-08-27T21:19:19.062801"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "finanzas",
+  "input_tokens": 2989,
+  "output_tokens": 1222,
+  "characters": 0,
+  "cost_usd": 0.010321,
+  "created_at": "2026-08-27T21:19:42.074192"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "espacio",
+  "input_tokens": 3396,
+  "output_tokens": 748,
+  "characters": 0,
+  "cost_usd": 0.007884,
+  "created_at": "2026-08-27T21:20:25.321783"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 237,
+  "output_tokens": 252,
+  "characters": 0,
+  "cost_usd": 0.001749,
+  "created_at": "2026-08-27T21:20:28.868085"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "formula-1",
+  "input_tokens": 3184,
+  "output_tokens": 1208,
+  "characters": 0,
+  "cost_usd": 0.010432,
+  "created_at": "2026-08-27T21:20:52.825249"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 294,
+  "output_tokens": 214,
+  "characters": 0,
+  "cost_usd": 0.001578,
+  "created_at": "2026-08-27T21:20:55.126081"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "exploracion-espacial",
+  "input_tokens": 1481,
+  "output_tokens": 846,
+  "characters": 0,
+  "cost_usd": 0.006557,
+  "created_at": "2026-08-27T21:21:14.090413"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 255,
+  "output_tokens": 253,
+  "characters": 0,
+  "cost_usd": 0.001773,
+  "created_at": "2026-08-27T21:21:17.154284"
+ },
+ {
+  "kind": "analysis",
+  "model": "gpt-5.6-sol",
+  "meta": "espacio",
+  "input_tokens": 514,
+  "output_tokens": 412,
+  "characters": 0,
+  "cost_usd": 0.01493,
+  "created_at": "2026-08-27T21:21:25.151489"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "tech",
+  "input_tokens": 5279,
+  "output_tokens": 1680,
+  "characters": 0,
+  "cost_usd": 0.015359,
+  "created_at": "2026-08-27T21:22:03.439504"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "finance",
+  "input_tokens": 1919,
+  "output_tokens": 1822,
+  "characters": 0,
+  "cost_usd": 0.012851,
+  "created_at": "2026-08-27T21:22:22.880743"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 155,
+  "output_tokens": 129,
+  "characters": 0,
+  "cost_usd": 0.000929,
+  "created_at": "2026-08-27T21:22:24.983552"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "us",
+  "input_tokens": 4763,
+  "output_tokens": 1916,
+  "characters": 0,
+  "cost_usd": 0.016259,
+  "created_at": "2026-08-27T21:22:44.888275"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "colombia",
+  "input_tokens": 4105,
+  "output_tokens": 1716,
+  "characters": 0,
+  "cost_usd": 0.014401,
+  "created_at": "2026-08-27T21:23:01.316988"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 211,
+  "output_tokens": 153,
+  "characters": 0,
+  "cost_usd": 0.001129,
+  "created_at": "2026-08-27T21:23:03.680449"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "spain",
+  "input_tokens": 5348,
+  "output_tokens": 1741,
+  "characters": 0,
+  "cost_usd": 0.015794,
+  "created_at": "2026-08-27T21:23:23.391294"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 141,
+  "output_tokens": 94,
+  "characters": 0,
+  "cost_usd": 0.000705,
+  "created_at": "2026-08-27T21:23:25.272426"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "history",
+  "input_tokens": 340,
+  "output_tokens": 1349,
+  "characters": 0,
+  "cost_usd": 0.008434,
+  "created_at": "2026-08-27T21:23:40.709462"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 308,
+  "output_tokens": 263,
+  "characters": 0,
+  "cost_usd": 0.001886,
+  "created_at": "2026-08-27T21:23:44.168498"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "tech",
+  "input_tokens": 5276,
+  "output_tokens": 1501,
+  "characters": 0,
+  "cost_usd": 0.014282,
+  "created_at": "2026-08-27T21:23:53.551153"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "espacio",
+  "input_tokens": 471,
+  "output_tokens": 189,
+  "characters": 0,
+  "cost_usd": 0.001605,
+  "created_at": "2026-08-27T21:23:54.426774"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 101,
+  "output_tokens": 73,
+  "characters": 0,
+  "cost_usd": 0.000539,
+  "created_at": "2026-08-27T21:23:56.074593"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 125,
+  "output_tokens": 111,
+  "characters": 0,
+  "cost_usd": 0.000791,
+  "created_at": "2026-08-27T21:23:57.019418"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "formula-1",
+  "input_tokens": 2432,
+  "output_tokens": 925,
+  "characters": 0,
+  "cost_usd": 0.007982,
+  "created_at": "2026-08-27T21:24:06.447822"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 240,
+  "output_tokens": 196,
+  "characters": 0,
+  "cost_usd": 0.001416,
+  "created_at": "2026-08-27T21:24:09.110007"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "finance",
+  "input_tokens": 1916,
+  "output_tokens": 1275,
+  "characters": 0,
+  "cost_usd": 0.009566,
+  "created_at": "2026-08-27T21:24:13.422656"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 121,
+  "output_tokens": 83,
+  "characters": 0,
+  "cost_usd": 0.000619,
+  "created_at": "2026-08-27T21:24:15.096577"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "us",
+  "input_tokens": 4760,
+  "output_tokens": 1380,
+  "characters": 0,
+  "cost_usd": 0.01304,
+  "created_at": "2026-08-27T21:24:31.566989"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 101,
+  "output_tokens": 100,
+  "characters": 0,
+  "cost_usd": 0.000701,
+  "created_at": "2026-08-27T21:24:33.515119"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "colombia",
+  "input_tokens": 4102,
+  "output_tokens": 1350,
+  "characters": 0,
+  "cost_usd": 0.012202,
+  "created_at": "2026-08-27T21:24:48.941260"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 156,
+  "output_tokens": 106,
+  "characters": 0,
+  "cost_usd": 0.000792,
+  "created_at": "2026-08-27T21:24:50.927999"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "spain",
+  "input_tokens": 5345,
+  "output_tokens": 1323,
+  "characters": 0,
+  "cost_usd": 0.013283,
+  "created_at": "2026-08-27T21:25:07.654765"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 97,
+  "output_tokens": 71,
+  "characters": 0,
+  "cost_usd": 0.000523,
+  "created_at": "2026-08-27T21:25:09.262712"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "history",
+  "input_tokens": 421,
+  "output_tokens": 1117,
+  "characters": 0,
+  "cost_usd": 0.007123,
+  "created_at": "2026-08-27T21:25:22.219167"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 231,
+  "output_tokens": 230,
+  "characters": 0,
+  "cost_usd": 0.001611,
+  "created_at": "2026-08-27T21:25:25.188455"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "espacio",
+  "input_tokens": 479,
+  "output_tokens": 105,
+  "characters": 0,
+  "cost_usd": 0.001109,
+  "created_at": "2026-08-27T21:25:42.769929"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "tech",
+  "input_tokens": 5344,
+  "output_tokens": 2682,
+  "characters": 0,
+  "cost_usd": 0.021436,
+  "created_at": "2026-08-27T21:26:31.905379"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 173,
+  "output_tokens": 116,
+  "characters": 0,
+  "cost_usd": 0.000869,
+  "created_at": "2026-08-27T21:26:35.069569"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "finance",
+  "input_tokens": 1919,
+  "output_tokens": 1848,
+  "characters": 0,
+  "cost_usd": 0.013007,
+  "created_at": "2026-08-27T21:26:59.639596"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 109,
+  "output_tokens": 107,
+  "characters": 0,
+  "cost_usd": 0.000751,
+  "created_at": "2026-08-27T21:27:01.568715"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "us",
+  "input_tokens": 4772,
+  "output_tokens": 1567,
+  "characters": 0,
+  "cost_usd": 0.014174,
+  "created_at": "2026-08-27T21:27:18.429929"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "colombia",
+  "input_tokens": 3846,
+  "output_tokens": 1682,
+  "characters": 0,
+  "cost_usd": 0.013938,
+  "created_at": "2026-08-27T21:27:35.262651"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 201,
+  "output_tokens": 147,
+  "characters": 0,
+  "cost_usd": 0.001083,
+  "created_at": "2026-08-27T21:27:37.412413"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "spain",
+  "input_tokens": 5361,
+  "output_tokens": 1590,
+  "characters": 0,
+  "cost_usd": 0.014901,
+  "created_at": "2026-08-27T21:27:54.494966"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 152,
+  "output_tokens": 105,
+  "characters": 0,
+  "cost_usd": 0.000782,
+  "created_at": "2026-08-27T21:27:56.424733"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "history",
+  "input_tokens": 340,
+  "output_tokens": 1193,
+  "characters": 0,
+  "cost_usd": 0.007498,
+  "created_at": "2026-08-27T21:28:09.518038"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 291,
+  "output_tokens": 281,
+  "characters": 0,
+  "cost_usd": 0.001977,
+  "created_at": "2026-08-27T21:28:12.696619"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "tech",
+  "input_tokens": 5339,
+  "output_tokens": 1725,
+  "characters": 0,
+  "cost_usd": 0.015689,
+  "created_at": "2026-08-27T21:32:10.709751"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 316,
+  "output_tokens": 238,
+  "characters": 0,
+  "cost_usd": 0.001744,
+  "created_at": "2026-08-27T21:32:14.416853"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "finance",
+  "input_tokens": 1914,
+  "output_tokens": 1641,
+  "characters": 0,
+  "cost_usd": 0.01176,
+  "created_at": "2026-08-27T21:32:35.388809"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 168,
+  "output_tokens": 85,
+  "characters": 0,
+  "cost_usd": 0.000678,
+  "created_at": "2026-08-27T21:32:37.238662"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "us",
+  "input_tokens": 4739,
+  "output_tokens": 1510,
+  "characters": 0,
+  "cost_usd": 0.013799,
+  "created_at": "2026-08-27T21:32:54.924119"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 137,
+  "output_tokens": 94,
+  "characters": 0,
+  "cost_usd": 0.000701,
+  "created_at": "2026-08-27T21:32:56.763418"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "colombia",
+  "input_tokens": 3836,
+  "output_tokens": 1148,
+  "characters": 0,
+  "cost_usd": 0.010724,
+  "created_at": "2026-08-27T21:33:08.961954"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 192,
+  "output_tokens": 136,
+  "characters": 0,
+  "cost_usd": 0.001008,
+  "created_at": "2026-08-27T21:33:11.450258"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "spain",
+  "input_tokens": 5345,
+  "output_tokens": 1436,
+  "characters": 0,
+  "cost_usd": 0.013961,
+  "created_at": "2026-08-27T21:33:25.053408"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 101,
+  "output_tokens": 71,
+  "characters": 0,
+  "cost_usd": 0.000527,
+  "created_at": "2026-08-27T21:33:26.841746"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "history",
+  "input_tokens": 335,
+  "output_tokens": 1103,
+  "characters": 0,
+  "cost_usd": 0.006953,
+  "created_at": "2026-08-27T21:33:38.758713"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 258,
+  "output_tokens": 233,
+  "characters": 0,
+  "cost_usd": 0.001656,
+  "created_at": "2026-08-27T21:33:41.600488"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "tech",
+  "input_tokens": 5350,
+  "output_tokens": 1315,
+  "characters": 0,
+  "cost_usd": 0.01324,
+  "created_at": "2026-08-27T21:36:06.449319"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 321,
+  "output_tokens": 209,
+  "characters": 0,
+  "cost_usd": 0.001575,
+  "created_at": "2026-08-27T21:36:08.981465"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "finance",
+  "input_tokens": 1907,
+  "output_tokens": 1319,
+  "characters": 0,
+  "cost_usd": 0.009821,
+  "created_at": "2026-08-27T21:36:27.093582"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 101,
+  "output_tokens": 95,
+  "characters": 0,
+  "cost_usd": 0.000671,
+  "created_at": "2026-08-27T21:36:28.748136"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "us",
+  "input_tokens": 4747,
+  "output_tokens": 1305,
+  "characters": 0,
+  "cost_usd": 0.012577,
+  "created_at": "2026-08-27T21:36:43.053482"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 98,
+  "output_tokens": 142,
+  "characters": 0,
+  "cost_usd": 0.00095,
+  "created_at": "2026-08-27T21:36:45.127845"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "colombia",
+  "input_tokens": 3843,
+  "output_tokens": 1289,
+  "characters": 0,
+  "cost_usd": 0.011577,
+  "created_at": "2026-08-27T21:36:58.561523"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 156,
+  "output_tokens": 118,
+  "characters": 0,
+  "cost_usd": 0.000864,
+  "created_at": "2026-08-27T21:37:00.458750"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "spain",
+  "input_tokens": 5347,
+  "output_tokens": 1334,
+  "characters": 0,
+  "cost_usd": 0.013351,
+  "created_at": "2026-08-27T21:37:26.133933"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 117,
+  "output_tokens": 123,
+  "characters": 0,
+  "cost_usd": 0.000855,
+  "created_at": "2026-08-27T21:37:29.498773"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "history",
+  "input_tokens": 337,
+  "output_tokens": 904,
+  "characters": 0,
+  "cost_usd": 0.005761,
+  "created_at": "2026-08-27T21:37:40.968347"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 243,
+  "output_tokens": 224,
+  "characters": 0,
+  "cost_usd": 0.001587,
+  "created_at": "2026-08-27T21:37:44.001473"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "tech",
+  "input_tokens": 670,
+  "output_tokens": 1369,
+  "characters": 0,
+  "cost_usd": 0.04442,
+  "created_at": "2026-08-27T21:48:11.776713"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "episode_1",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 4188,
+  "cost_usd": 0.75384,
+  "created_at": "2026-08-27T21:48:51.020433"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "finance",
+  "input_tokens": 668,
+  "output_tokens": 1182,
+  "characters": 0,
+  "cost_usd": 0.0388,
+  "created_at": "2026-08-27T21:53:49.957122"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "history",
+  "input_tokens": 639,
+  "output_tokens": 1615,
+  "characters": 0,
+  "cost_usd": 0.051645,
+  "created_at": "2026-08-27T21:54:02.078041"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "episode_2",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 4447,
+  "cost_usd": 0.80046,
+  "created_at": "2026-08-27T21:54:45.280459"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "episode_3",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 5078,
+  "cost_usd": 0.91404,
+  "created_at": "2026-08-27T21:55:04.406774"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "tech",
+  "input_tokens": 661,
+  "output_tokens": 1059,
+  "characters": 0,
+  "cost_usd": 0.035075,
+  "created_at": "2026-08-27T21:55:40.913481"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "episode_4",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 4077,
+  "cost_usd": 0.73386,
+  "created_at": "2026-08-27T21:56:15.976896"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "finance",
+  "input_tokens": 683,
+  "output_tokens": 1079,
+  "characters": 0,
+  "cost_usd": 0.035785,
+  "created_at": "2026-08-27T22:15:04.511305"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "tech",
+  "input_tokens": 1133,
+  "output_tokens": 1230,
+  "characters": 0,
+  "cost_usd": 0.042565,
+  "created_at": "2026-08-27T22:15:40.567409"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "tecnologaa-e-ia",
+  "input_tokens": 1930,
+  "output_tokens": 1259,
+  "characters": 0,
+  "cost_usd": 0.009484,
+  "created_at": "2026-08-27T23:16:43.051785"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 301,
+  "output_tokens": 235,
+  "characters": 0,
+  "cost_usd": 0.001711,
+  "created_at": "2026-08-27T23:16:46.542779"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "hoy-en-espaaa",
+  "input_tokens": 485,
+  "output_tokens": 211,
+  "characters": 0,
+  "cost_usd": 0.001751,
+  "created_at": "2026-08-27T23:16:58.676225"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 103,
+  "output_tokens": 65,
+  "characters": 0,
+  "cost_usd": 0.000493,
+  "created_at": "2026-08-27T23:17:00.612240"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "ciencia",
+  "input_tokens": 2817,
+  "output_tokens": 1066,
+  "characters": 0,
+  "cost_usd": 0.009213,
+  "created_at": "2026-08-27T23:19:55.846725"
+ },
+ {
+  "kind": "curation",
+  "model": "gpt-5.6-luna",
+  "meta": "image-queries",
+  "input_tokens": 278,
+  "output_tokens": 278,
+  "characters": 0,
+  "cost_usd": 0.001946,
+  "created_at": "2026-08-27T23:19:59.641314"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "tech",
+  "input_tokens": 2020,
+  "output_tokens": 1236,
+  "characters": 0,
+  "cost_usd": 0.04718,
+  "created_at": "2026-08-27T23:27:10.143471"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "episode_8",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 4878,
+  "cost_usd": 0.87804,
+  "created_at": "2026-08-27T23:27:56.868692"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "tech",
+  "input_tokens": 2020,
+  "output_tokens": 1164,
+  "characters": 0,
+  "cost_usd": 0.04502,
+  "created_at": "2026-08-27T23:31:30.411555"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "history",
+  "input_tokens": 665,
+  "output_tokens": 1692,
+  "characters": 0,
+  "cost_usd": 0.054085,
+  "created_at": "2026-08-27T23:31:46.444100"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "episode_9",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 4668,
+  "cost_usd": 0.84024,
+  "created_at": "2026-08-27T23:32:23.448258"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "episode_10",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 5491,
+  "cost_usd": 0.98838,
+  "created_at": "2026-08-27T23:33:08.745001"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "finance",
+  "input_tokens": 694,
+  "output_tokens": 936,
+  "characters": 0,
+  "cost_usd": 0.03155,
+  "created_at": "2026-08-27T23:33:26.887347"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "tech",
+  "input_tokens": 1133,
+  "output_tokens": 1192,
+  "characters": 0,
+  "cost_usd": 0.041425,
+  "created_at": "2026-08-27T23:33:31.612411"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "episode_11",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 2952,
+  "cost_usd": 0.53136,
+  "created_at": "2026-08-27T23:34:02.584997"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "episode_12",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 3657,
+  "cost_usd": 0.65826,
+  "created_at": "2026-08-27T23:34:15.783021"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "history",
+  "input_tokens": 665,
+  "output_tokens": 1805,
+  "characters": 0,
+  "cost_usd": 0.057475,
+  "created_at": "2026-08-27T23:48:09.323232"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "episode_18",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 5980,
+  "cost_usd": 1.0764,
+  "created_at": "2026-08-27T23:49:36.335634"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "stitch_test",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 151,
+  "cost_usd": 0.02718,
+  "created_at": "2026-08-27T23:50:56.906316"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "tech",
+  "input_tokens": 2020,
+  "output_tokens": 1297,
+  "characters": 0,
+  "cost_usd": 0.04901,
+  "created_at": "2026-08-27T23:53:11.478678"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "history",
+  "input_tokens": 665,
+  "output_tokens": 2014,
+  "characters": 0,
+  "cost_usd": 0.063745,
+  "created_at": "2026-08-27T23:53:29.679647"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "episode_19",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 4396,
+  "cost_usd": 0.79128,
+  "created_at": "2026-08-27T23:53:51.966069"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "episode_20",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 4826,
+  "cost_usd": 0.86868,
+  "created_at": "2026-08-27T23:54:26.870692"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "finance",
+  "input_tokens": 694,
+  "output_tokens": 973,
+  "characters": 0,
+  "cost_usd": 0.03266,
+  "created_at": "2026-08-27T23:54:50.162299"
+ },
+ {
+  "kind": "script",
+  "model": "gpt-5.6-sol",
+  "meta": "tech",
+  "input_tokens": 1133,
+  "output_tokens": 1947,
+  "characters": 0,
+  "cost_usd": 0.064075,
+  "created_at": "2026-08-27T23:55:06.688351"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "episode_21",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 3706,
+  "cost_usd": 0.66708,
+  "created_at": "2026-08-27T23:55:24.033829"
+ },
+ {
+  "kind": "tts",
+  "model": "eleven_multilingual_v2",
+  "meta": "episode_22",
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "characters": 3857,
+  "cost_usd": 0.69426,
+  "created_at": "2026-08-27T23:55:39.633427"
+ }
+]

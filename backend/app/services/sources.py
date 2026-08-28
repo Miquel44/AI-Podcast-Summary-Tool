@@ -161,6 +161,31 @@ _OG_IMAGE_RE = re.compile(
 )
 
 
+def fetch_article_text(url: str, timeout: float = 5.0, max_chars: int = 4000) -> str | None:
+    """Full article text via trafilatura (readability-style extraction).
+
+    Used only at scriptwriting time so the writer quotes real facts instead of
+    embellishing headlines. Google News links are skipped (obfuscated redirects)
+    and any failure falls back to headline+summary mode.
+    """
+    if "news.google.com" in url:
+        return None
+    try:
+        import trafilatura
+
+        resp = httpx.get(
+            url, timeout=timeout, follow_redirects=True,
+            headers={"User-Agent": "Mozilla/5.0 (personal-podcast-generator)"},
+        )
+        resp.raise_for_status()
+        text = trafilatura.extract(resp.text, include_comments=False)
+        if text and len(text) > 400:
+            return text[:max_chars]
+    except Exception as exc:
+        log.debug("full text failed for %s: %s", url, exc)
+    return None
+
+
 def fetch_og_image(url: str, timeout: float = 4.0) -> str | None:
     """og:image of an article page. Google News redirect pages are skipped."""
     if "news.google.com" in url:

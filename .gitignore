@@ -6,6 +6,10 @@
 # Personal interview notes — never commit
 INTERVIEW_PREP.md
 SESSION_COSTS.md
+PLAN.md
+
+# Local dev tooling
+.claude/
 
 # Dependencies
 node_modules/

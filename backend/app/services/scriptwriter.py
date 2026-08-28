@@ -1,10 +1,12 @@
+import concurrent.futures
+
 from ..config import settings
 from ..models import Category, Story
-from . import llm
+from . import llm, sources
 from .discovery import LANGUAGES
 
-# Style guide: sober, confident, human. The user's feedback: earlier drafts
-# tried too hard to be funny and felt forced — humor must never be sought.
+# Style guide: sober, confident, human. Humor is never sought — forced jokes
+# are the fastest way to sound like generated content.
 _STYLE = """ESTILO (muy importante):
 - Lenguaje natural HABLADO, sobrio y con confianza: como un periodista de podcast
   que domina el tema y respeta al oyente, no un animador.
@@ -63,6 +65,25 @@ def write_script(
         f"- [{a['source']}] {a['title']}" for a in (story.source_articles or [])
     ) or "(sin artículos: tema evergreen, usa tu conocimiento con rigor)"
 
+    # Full article text (parallel, best-effort) so the writer works from real
+    # facts, not headline embellishment. Falls back to summaries when none load.
+    candidates = [
+        a for a in (story.source_articles or []) if "news.google.com" not in a["url"]
+    ][:3]
+    full_texts: list[tuple[dict, str]] = []
+    if candidates:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=len(candidates)) as pool:
+            results = pool.map(
+                lambda a: (a, sources.fetch_article_text(a["url"])), candidates
+            )
+        full_texts = [(a, text) for a, text in results if text]
+    if full_texts:
+        articles_block = "TEXTO COMPLETO DE LAS FUENTES (cíñete estrictamente a estos hechos):\n" + "\n\n".join(
+            f"=== [{a['source']}] {a['title']} ===\n{text}" for a, text in full_texts
+        )
+    else:
+        articles_block = f"ARTÍCULOS DE RESPALDO (solo titulares):\n{sources_txt}"
+
     if len(hosts) >= 2:
         system = _DIALOGUE_SYSTEM
         cast = "\n".join(
@@ -77,7 +98,9 @@ def write_script(
         f"HISTORIA: {story.title}\n"
         f"CONTEXTO: {story.tagline}\n"
         f"RESUMEN: {story.summary}\n\n"
-        f"ARTÍCULOS DE RESPALDO:\n{sources_txt}\n\n"
+        f"{articles_block}\n\n"
+        "FACTUALIDAD: usa únicamente hechos presentes en las fuentes; si un dato "
+        "no aparece, no lo inventes.\n\n"
         f"INTERESES DEL OYENTE (ajusta el enfoque):\n{category.interest_prompt}\n\n"
         f"REPARTO:\n{cast}\n\n"
         f"IDIOMA DEL GUION: escribe título y TODO el guion en "

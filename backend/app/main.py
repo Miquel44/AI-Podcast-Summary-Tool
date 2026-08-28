@@ -13,7 +13,7 @@ from fastapi.staticfiles import StaticFiles
 from .config import BASE_DIR, settings
 from .database import Base, SessionLocal, engine
 from .routers import categories, demo, interests, metrics, settings as settings_router, stories
-from .seed import seed_categories, seed_demo
+from .seed import seed_categories, seed_demo, seed_usage_ledger
 
 logging.basicConfig(level=logging.INFO)
 
@@ -41,6 +41,7 @@ def on_startup() -> None:
     with SessionLocal() as db:
         seed_categories(db)
         seed_demo(db)
+        seed_usage_ledger(db)
     from . import scheduler
 
     scheduler.start()

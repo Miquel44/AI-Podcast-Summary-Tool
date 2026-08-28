@@ -10,8 +10,15 @@ import { LANGS, STRINGS, type Lang } from './i18n'
 import type { Category, Episode, Story, StoryDetail } from './types'
 
 // The dashboard pulls the whole charting library — load it only when opened.
+// If the lazy chunk 404s (stale tab open across a redeploy), reload once to
+// pick up the fresh build instead of hanging on the loading state.
 const Dashboard = lazy(() =>
-  import('./components/Dashboard').then((m) => ({ default: m.Dashboard })),
+  import('./components/Dashboard')
+    .then((m) => ({ default: m.Dashboard }))
+    .catch(() => {
+      window.location.reload()
+      return new Promise<never>(() => {})
+    }),
 )
 
 export default function App() {
@@ -64,15 +71,16 @@ export default function App() {
   }, [loadAll])
 
   // The backend prepares the daily edition on its own; poll quietly so rows
-  // fill in and card statuses update without any user action. Paused while
-  // the tab is hidden to avoid useless requests.
+  // fill in and card statuses update without any user action. Re-fetches the
+  // category list too, so newly added interests appear without a reload.
+  // Paused while the tab is hidden to avoid useless requests.
   useEffect(() => {
     if (!categories.length) return
     const timer = setInterval(() => {
-      if (!document.hidden) loadStories(categories)
+      if (!document.hidden) loadAll().catch(() => {})
     }, 6000)
     return () => clearInterval(timer)
-  }, [categories, loadStories])
+  }, [categories, loadAll])
 
   const changeLanguage = async (next: Lang) => {
     if (next === lang) return
@@ -259,7 +267,7 @@ export default function App() {
         </>
       )}
 
-      {nowPlaying && <div className="h-20" />}
+      {nowPlaying && <div className="h-14" />}
 
       {selected && (
         <StoryModal

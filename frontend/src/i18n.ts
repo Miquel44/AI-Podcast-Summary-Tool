@@ -46,7 +46,6 @@ export interface Strings {
   dashTitle: string
   dashSubtitle: string
   dashMau: string
-  dashStickiness: string
   dashMinListen: string
   dashListenThrough: string
   dashCostEpisode: string
@@ -156,7 +155,6 @@ export const STRINGS: Record<Lang, Strings> = {
     dashTitle: 'Dashboard interno',
     dashSubtitle: 'Métricas de uso · últimos 60 días · datos simulados salvo el panel "En vivo"',
     dashMau: 'Usuarios activos (MAU)',
-    dashStickiness: 'DAU/MAU',
     dashMinListen: 'Min. por escucha',
     dashListenThrough: 'Escucha completa',
     dashCostEpisode: 'Coste por episodio',
@@ -264,7 +262,6 @@ export const STRINGS: Record<Lang, Strings> = {
     dashTitle: 'Internal dashboard',
     dashSubtitle: 'Usage metrics · last 60 days · simulated data except the "Live" panel',
     dashMau: 'Active users (MAU)',
-    dashStickiness: 'DAU/MAU',
     dashMinListen: 'Min. per listen',
     dashListenThrough: 'Listen-through',
     dashCostEpisode: 'Cost per episode',
@@ -372,7 +369,6 @@ export const STRINGS: Record<Lang, Strings> = {
     dashTitle: 'Dashboard intern',
     dashSubtitle: 'Mètriques d’ús · últims 60 dies · dades simulades excepte el panell "En viu"',
     dashMau: 'Usuaris actius (MAU)',
-    dashStickiness: 'DAU/MAU',
     dashMinListen: 'Min. per escolta',
     dashListenThrough: 'Escolta completa',
     dashCostEpisode: 'Cost per episodi',

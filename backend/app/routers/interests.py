@@ -46,7 +46,12 @@ concretos y útiles como tema de noticias (p. ej. "Fórmula 1", no "cosas de coc
 
 @router.get("/suggestions")
 def suggestions(db: Session = Depends(get_db)):
-    categories = db.query(Category).order_by(Category.position, Category.id).all()
+    categories = (
+        db.query(Category)
+        .filter(Category.slug != "demo")  # showcase shelf, not a pickable interest
+        .order_by(Category.position, Category.id)
+        .all()
+    )
     return {
         "recommended": [
             {"slug": c.slug, "title": c.title, "enabled": c.enabled} for c in categories
@@ -111,7 +116,7 @@ def apply(payload: ApplyIn, db: Session = Depends(get_db)):
             ))
             created.append(name)
     for category in all_categories:
-        if category.slug not in kept_slugs:
+        if category.slug not in kept_slugs and category.slug != "demo":
             category.enabled = False
     db.commit()
 

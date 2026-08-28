@@ -10,8 +10,6 @@ VOICE_JAVIER_K = {"voice_id": "h415g7h7bSwQrn1qw4ar", "voice_name": "Javier"}   
 VOICE_MELANIE = {"voice_id": "bN1bDXgDIGX5lw0rtY2B", "voice_name": "Melanie"}    # es-AR f
 VOICE_OLIVER = {"voice_id": "FT9r1rAZNP1NDa9qgrTd", "voice_name": "Oliver"}      # LatAm m
 VOICE_CHARLIE = {"voice_id": "Yb8JGzcZyW5YYzenhRCm", "voice_name": "Charlie"}    # m, narrador
-VOICE_RACHEL = {"voice_id": "21m00Tcm4TlvDq8ikWAM", "voice_name": "Rachel"}      # en f
-VOICE_ADAM = {"voice_id": "pNInz6obpgDQGcFmaJgB", "voice_name": "Adam"}          # en m
 
 # Seeded category titles per UI language (slug -> {lang: title}).
 CATEGORY_TITLES = {
@@ -35,8 +33,7 @@ SEED_CATEGORIES = [
             "detalle técnico de cómo funcionan los modelos, no solo el anuncio."
         ),
         kind=CategoryKind.news,
-        # Single host by default — the user found 2-voice episodes didn't sound
-        # like one room. Multi-voice stays fully supported via the hosts list.
+        # Single host by default; 2-4 voice dialogue stays supported via this list.
         hosts=[{**VOICE_JEIJO, "persona": "experto técnico que explica con calma cómo funcionan las cosas"}],
     ),
     # Each country row speaks with its own accent — small touch, big demo effect.
@@ -153,6 +150,36 @@ def seed_demo(db: Session) -> None:
             script=item.get("script", []),
             audio_path=f"/storage/episodes/{item['audio_file']}",
             duration_s=item.get("duration_s"),
+        ))
+    db.commit()
+
+
+def seed_usage_ledger(db: Session) -> None:
+    """Restore the real development-time cost ledger on a fresh database.
+
+    Every row is an actually-measured API call from building this product; the
+    dashboard's "Live" panel shows them so real unit costs are visible even on
+    a fresh clone. Only runs when the ledger is empty (never duplicates).
+    """
+    import json
+    from datetime import datetime
+
+    from .config import BASE_DIR
+    from .models import UsageLog
+
+    bundle = BASE_DIR / "demo" / "usage_ledger.json"
+    if not bundle.exists() or db.query(UsageLog).first() is not None:
+        return
+    for row in json.loads(bundle.read_text(encoding="utf-8")):
+        db.add(UsageLog(
+            kind=row["kind"],
+            model=row.get("model", ""),
+            meta=row.get("meta", ""),
+            input_tokens=row.get("input_tokens", 0),
+            output_tokens=row.get("output_tokens", 0),
+            characters=row.get("characters", 0),
+            cost_usd=row.get("cost_usd", 0.0),
+            created_at=datetime.fromisoformat(row["created_at"]),
         ))
     db.commit()
 

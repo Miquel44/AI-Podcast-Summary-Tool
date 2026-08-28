@@ -72,14 +72,14 @@ export function PlayerBar({
         onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
         onEnded={() => setPlaying(false)}
       />
-      <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-2.5 md:px-6">
+      <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-1.5 md:px-6">
         {/* Track info */}
         <button
           onClick={() => onOpenStory(story)}
-          className="flex min-w-0 flex-1 cursor-pointer items-center gap-3 text-left md:flex-none md:basis-72"
+          className="flex min-w-0 flex-1 cursor-pointer items-center gap-2.5 text-left md:flex-none md:basis-72"
         >
           <div
-            className="h-11 w-11 shrink-0 overflow-hidden rounded-md"
+            className="h-9 w-9 shrink-0 overflow-hidden rounded-md"
             style={{
               background: `linear-gradient(140deg, ${story.cover_from}, ${story.cover_to})`,
             }}
@@ -89,37 +89,37 @@ export function PlayerBar({
             )}
           </div>
           <div className="min-w-0">
-            <p className="truncate text-sm font-semibold text-white">{episode.title || story.title}</p>
-            <p className="truncate text-xs text-white/45">{story.tagline}</p>
+            <p className="truncate text-[13px] leading-tight font-semibold text-white">
+              {episode.title || story.title}
+            </p>
+            <p className="truncate text-[11px] leading-tight text-white/45">{story.tagline}</p>
           </div>
         </button>
 
-        {/* Controls + progress */}
-        <div className="flex flex-1 flex-col items-center gap-1">
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => skip(-15)}
-              aria-label="-15s"
-              className="cursor-pointer text-xs font-semibold text-white/50 transition hover:text-white"
-            >
-              ⟲ 15
-            </button>
-            <button
-              onClick={toggle}
-              aria-label={playing ? 'Pause' : 'Play'}
-              className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-white text-sm text-ink transition hover:scale-105"
-            >
-              {playing ? '❚❚' : '▶'}
-            </button>
-            <button
-              onClick={() => skip(15)}
-              aria-label="+15s"
-              className="cursor-pointer text-xs font-semibold text-white/50 transition hover:text-white"
-            >
-              15 ⟳
-            </button>
-          </div>
-          <div className="hidden w-full max-w-xl items-center gap-2 md:flex">
+        {/* Controls + progress, single compact row */}
+        <div className="flex flex-1 items-center justify-center gap-3">
+          <button
+            onClick={() => skip(-15)}
+            aria-label="-15s"
+            className="cursor-pointer text-[11px] font-semibold text-white/50 transition hover:text-white"
+          >
+            ⟲ 15
+          </button>
+          <button
+            onClick={toggle}
+            aria-label={playing ? 'Pause' : 'Play'}
+            className="flex h-7 w-7 shrink-0 cursor-pointer items-center justify-center rounded-full bg-white text-xs text-ink transition hover:scale-105"
+          >
+            {playing ? '❚❚' : '▶'}
+          </button>
+          <button
+            onClick={() => skip(15)}
+            aria-label="+15s"
+            className="cursor-pointer text-[11px] font-semibold text-white/50 transition hover:text-white"
+          >
+            15 ⟳
+          </button>
+          <div className="hidden w-full max-w-md items-center gap-2 md:flex">
             <span className="w-10 text-right text-[11px] text-white/40" style={{ fontVariantNumeric: 'tabular-nums' }}>
               {fmt(time)}
             </span>

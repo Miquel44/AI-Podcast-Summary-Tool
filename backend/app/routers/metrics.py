@@ -248,7 +248,6 @@ def metrics(db: Session = Depends(get_db)):
     last = series[-1]
     last7 = series[-7:]
     mau = last["users"]
-    dau_avg = sum(d["dau"] for d in last7) / 7
     plays_day = round(sum(d["plays"] for d in last7) / 7)
     listeners_day = round(sum(d["listeners"] for d in last7) / 7)
     daily_cost_avg = sum(d["llm_cost"] + d["tts_cost"] for d in last7) / 7
