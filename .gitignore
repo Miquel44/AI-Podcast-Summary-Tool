@@ -22,8 +22,8 @@ dist/
 build/
 .next/
 
-# Generated audio (except the required sample.mp3 and the demo bundle)
-storage/episodes/
+# Local state: database and generated audio (sample.mp3 and demo/ do ship)
+storage/
 *.mp3
 !sample.mp3
 !demo/*.mp3
