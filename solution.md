@@ -1,5 +1,5 @@
 # Solution Overview
-
+repo: https://github.com/Miquel44/AI-Podcast-Summary-Tool
 After some tinkering and searching the web, this is the solution I landed on for the podcast submission. The podcast submission has a "Netflix-adjacent" style (I liked this more than the spotify list style, the images in the squares add a really nice touch for me).
 
 ## How it works (Architecture & Flow)
